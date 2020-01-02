@@ -1,7 +1,18 @@
-import React, { FC } from "react";
-
-const App: FC = () => {
-  return <div>movie app</div>;
+import React from "react";
+import { AppContainer, GlobalStyle } from "./Style";
+import Header from "./Main/Header";
+import { BrowserRouter } from "react-router-dom";
+import Body from "./Main/Body";
+const App: React.FC = () => {
+  return (
+    <AppContainer>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Header />
+        <Body />
+      </BrowserRouter>
+    </AppContainer>
+  );
 };
 
 export default App;
