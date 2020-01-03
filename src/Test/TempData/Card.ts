@@ -1,6 +1,6 @@
 import { ITopRatedResults } from "../../Modules/Interfaces";
 
-const TempCards: ITopRatedResults[] = [
+const tempCards: ITopRatedResults[] = [
   {
     popularity: 25.179,
     vote_count: 2179,
@@ -88,7 +88,7 @@ const TempCards: ITopRatedResults[] = [
   }
 ];
 
-const TempCard: ITopRatedResults = {
+const tempCard: ITopRatedResults = {
   popularity: 25.179,
   vote_count: 2179,
   video: false,
@@ -106,4 +106,4 @@ const TempCard: ITopRatedResults = {
   release_date: "1995-10-20"
 };
 
-export { TempCards, TempCard };
+export { tempCards, tempCard };

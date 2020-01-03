@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardLabel SnapShot 1`] = `
+<div>
+  <div>
+    <div
+      data-testid="genre"
+    >
+      SF
+    </div>
+    <div
+      data-testid="name"
+    >
+      메트릭스
+    </div>
+  </div>
+</div>
+`;
