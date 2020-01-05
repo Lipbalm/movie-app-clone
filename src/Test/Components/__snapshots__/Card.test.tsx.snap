@@ -11,7 +11,11 @@ exports[`Card Component Card SnapShot 1`] = `
       class="sc-jzJRlG lhwmZp"
     >
       <img
+<<<<<<< HEAD
+        alt="No Image"
+=======
         alt="no image"
+>>>>>>> 5a599d27045f2a3bff67fd2995f592ad360071ad
         class="sc-cSHVUG dvKLDq"
         src="https://image.tmdb.org/t/p/w500//2CAL2433ZeIihfX1Hb2139CX0pW.jpg"
       />
