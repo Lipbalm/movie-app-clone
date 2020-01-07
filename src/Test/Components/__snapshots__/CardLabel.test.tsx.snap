@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<CardLabel /> SnapShot 1`] = `undefined`;
+
 exports[`CardLabel SnapShot 1`] = `
 <div>
   <div>

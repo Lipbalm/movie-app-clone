@@ -5,10 +5,7 @@ const isMatch = (input: string, pattern: string) => {
   return regex.test(input);
 };
 
-const changeGenreIdToName = (inputIds: number[]) => {
-  const result = inputIds.join("/");
-  inputIds.forEach(v => result.replace(v.toString(), `${genreIds[v]}`));
-  return result;
-};
+const changeGenreIdToName = (inputIds: number[]) =>
+  inputIds.map(v => genreIds[v]).join("/");
 
 export { isMatch, changeGenreIdToName };
