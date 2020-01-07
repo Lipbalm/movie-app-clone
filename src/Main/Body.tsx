@@ -15,7 +15,7 @@ const Body: FC = () => {
     <RouterHomeContainer>
       <CarouselContainer></CarouselContainer>
       <BodyWrapper>
-        <CardWidget key="CardWidget"></CardWidget>
+        <CardWidget key="CardWidget1"></CardWidget>
         <CardWidget key="CardWidget2"></CardWidget>
         <CardWidget key="CardWidget3"></CardWidget>
       </BodyWrapper>

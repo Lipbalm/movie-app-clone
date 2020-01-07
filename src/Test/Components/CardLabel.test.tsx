@@ -1,13 +1,30 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import CardLabel from "../../Components/WidgetComponents/CardLabel";
+import { tempCard } from "../TempData/Card";
+import { getGenreIds, genreIds } from "../../Modules/apis";
+import { changeGenreIdToName } from "../../Modules/utils";
+
+const { genre_ids, title } = tempCard;
 
 const setup = () => {
-  return { ...render(<CardLabel genre_id={13} name={"메트릭스"} />) };
+  const fetchGenres = async () => {
+    const result: Promise<string | boolean> = await getGenreIds("en-US");
+    console.log(result.then(res => res.toString));
+  };
+  fetchGenres();
+
+  console.log(genreIds);
+  return {
+    ...render(<CardLabel genre_ids={genre_ids} title={title} />)
+  };
 };
-describe("CardLabel", () => {
+
+describe("<CardLabel />", () => {
   it("SnapShot", () => {
     const { container } = setup();
+
+    console.log(genreIds);
     expect(container).toMatchSnapshot();
   });
 
@@ -16,7 +33,7 @@ describe("CardLabel", () => {
     const genre = getByTestId("genre");
     const name = getByTestId("name");
 
-    expect(genre).toHaveTextContent("SF");
-    expect(name).toHaveTextContent("메트릭스");
+    expect(genre).toHaveTextContent(changeGenreIdToName(genre_ids));
+    expect(name).toHaveTextContent(title);
   });
 });

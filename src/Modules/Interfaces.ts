@@ -26,3 +26,7 @@ export interface IGenreIds {
   id: number;
   name: string;
 }
+
+export interface IMapGenreIds {
+  [id: number]: string | null;
+}

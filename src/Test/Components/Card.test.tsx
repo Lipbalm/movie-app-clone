@@ -16,15 +16,9 @@ describe("Card Component", () => {
   });
 
   it("Card 썸네일 못 불러올 경우", () => {
-<<<<<<< HEAD
-    const { getByAltText, container } = setup();
-    const alt = getByAltText("No Image");
-=======
     const { getByAltText } = setup();
     const alt = getByAltText("no image");
->>>>>>> 5a599d27045f2a3bff67fd2995f592ad360071ad
     expect(alt).toBeTruthy();
-    expect().();
   });
 
   it("Card 이미지 렌더 테스트", () => {

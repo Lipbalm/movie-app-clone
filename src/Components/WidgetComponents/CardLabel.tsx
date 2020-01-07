@@ -1,16 +1,16 @@
 import React, { FC } from "react";
+import { changeGenreIdToName } from "../../Modules/utils";
 
 interface IProps {
-  genre_id: number;
-  name: string;
+  genre_ids: number[];
+  title: string;
 }
 
-const CardLabel: FC<IProps> = ({ genre_id, name }) => {
-  const changeGenre = () => (genre_id === 13 ? "SF" : "unknown");
+const CardLabel: FC<IProps> = ({ genre_ids, title }) => {
   return (
     <div>
-      <div data-testid="genre">{changeGenre()}</div>
-      <div data-testid="name">{name}</div>
+      <div data-testid="genre">{changeGenreIdToName(genre_ids)}</div>
+      <div data-testid="name">{title}</div>
     </div>
   );
 };

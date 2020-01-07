@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardWidget /> snapshot 1`] = `
+<div>
+  <div
+    class="sc-dnqmqq fbWGcO"
+  >
+    <div
+      class="sc-iwsKbI hQBmBE"
+    >
+      <h2>
+        Theme1
+      </h2>
+      <a
+        class="sc-gZMcBi gWSprQ"
+        href="/widgetTest"
+      >
+        더보기
+      </a>
+    </div>
+    <div
+      class="sc-gqjmRU jHofgo"
+    >
+      <div
+        class="sc-VigVT UDKFG"
+      />
+    </div>
+  </div>
+</div>
+`;

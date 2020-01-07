@@ -1,5 +1,10 @@
 import axios, { AxiosInstance } from "axios";
-import { ITopRatedMovies, ITopRatedResults, IGenreIds } from "./Interfaces";
+import {
+  ITopRatedMovies,
+  ITopRatedResults,
+  IGenreIds,
+  IMapGenreIds
+} from "./Interfaces";
 
 const apiKey = "f14b5a458d4b24203b40ecec534dfd0d";
 const baseMoviesInstance: AxiosInstance = axios.create({
@@ -8,7 +13,7 @@ const baseMoviesInstance: AxiosInstance = axios.create({
 
 const baseImageURL: string = "https://image.tmdb.org/t/p/w500/";
 
-let genreIds: IGenreIds[];
+let genreIds: IMapGenreIds[];
 
 const getTopRatedMovie = (language: string, page: number) =>
   baseMoviesInstance
@@ -23,7 +28,9 @@ const getGenreIds = (language: string) =>
       `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=${language}`
     )
     .then(response => {
-      genreIds = response.data;
+      response.data.forEach(v =>
+        v.name === undefined ? (genreIds[v.id] = "") : (genreIds[v.id] = v.name)
+      );
       return true;
     })
     .catch(e => e);

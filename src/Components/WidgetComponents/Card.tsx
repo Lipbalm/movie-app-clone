@@ -10,15 +10,7 @@ interface IProps {
 }
 
 const Card: FC<IProps> = ({ movie, index }) => {
-  const {
-    id,
-    genre_ids,
-    adult,
-    original_title,
-    title,
-    poster_path,
-    vote_average
-  } = movie;
+  const { id, genre_ids, title, poster_path } = movie;
 
   const [value, setValue] = useState<string>("");
 
@@ -35,7 +27,7 @@ const Card: FC<IProps> = ({ movie, index }) => {
       {value}
       <ThumnailWrapper>
         <ThumnailImg src={`${baseImageURL}${poster_path}`} alt="no image" />
-        <CardLabel genre_id={genre_ids[0]} name={title} />
+        <CardLabel genre_ids={genre_ids} title={title} />
       </ThumnailWrapper>
     </RectCard>
   );

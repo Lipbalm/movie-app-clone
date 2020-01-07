@@ -31,8 +31,6 @@ const CardWidget: FC = () => {
     fetchData();
   }, []);
 
-  console.log(movies);
-
   return (
     <CardWidgetWrapper>
       <WidgetHead>
