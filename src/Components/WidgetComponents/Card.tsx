@@ -1,8 +1,11 @@
 import React, { FC, useState } from "react";
 import { ITopRatedResults } from "../../Modules/Interfaces";
-import { RectCard, ThumnailWrapper, ThumnailImg } from "../../Style";
+import {
+  RectCard,
+  ThumnailWrapper,
+  ThumnailImg
+} from "../../Styles/WidgetStyle";
 import { baseImageURL } from "../../Modules/apis";
-import CardLabel from "./CardLabel";
 
 interface IProps {
   movie: ITopRatedResults;
@@ -27,7 +30,7 @@ const Card: FC<IProps> = ({ movie, index }) => {
       {value}
       <ThumnailWrapper>
         <ThumnailImg src={`${baseImageURL}${poster_path}`} alt="no image" />
-        <CardLabel genre_ids={genre_ids} title={title} />
+        {/* <CardLabel genre_ids={genre_ids} title={title} /> */}
       </ThumnailWrapper>
     </RectCard>
   );

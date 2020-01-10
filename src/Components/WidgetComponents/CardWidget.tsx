@@ -1,55 +1,23 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import {
   CardWidgetWrapper,
   WidgetHead,
-  WidgetLink,
-  WidgetContents,
-  WidgetContentsInner,
-  WidgetWarn
-} from "../../Style";
-import { getTopRatedMovie } from "../../Modules/apis";
+  WidgetLink
+} from "../../Styles/WidgetStyle";
 import { ITopRatedResults } from "../../Modules/Interfaces";
-import Card from "./Card";
 
-const CardWidget: FC = () => {
-  const [movies, setMovies] = useState<ITopRatedResults[] | null>(null);
-  const [load, setLoad] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-  const ADJUST_COUNT: number = 5;
+interface IProp {
+  head_text: string;
+  cards: ITopRatedResults[];
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const movies = await getTopRatedMovie("kr-KO", 1);
-        setMovies(movies.results.slice(0, ADJUST_COUNT));
-      } catch (e) {
-        setError("데이터를 불러올 수 없습니다. : " + e);
-      } finally {
-        setLoad(false);
-      }
-    };
-    fetchData();
-  }, []);
-
+const CardWidget: FC<IProp> = ({ head_text }) => {
   return (
     <CardWidgetWrapper>
       <WidgetHead>
-        <h2>Theme1</h2>
-        <WidgetLink to="/widgetTest">더보기</WidgetLink>
+        {head_text}
+        <WidgetLink to="/theme">더보기</WidgetLink>
       </WidgetHead>
-
-      <WidgetContents>
-        <WidgetContentsInner>
-          {load ? null : error !== null ? (
-            <WidgetWarn>{error}</WidgetWarn>
-          ) : (
-            movies !== null &&
-            movies.map((movie, index) => (
-              <Card key={index} movie={movie} index={index} />
-            ))
-          )}
-        </WidgetContentsInner>
-      </WidgetContents>
     </CardWidgetWrapper>
   );
 };

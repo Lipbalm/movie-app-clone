@@ -3,27 +3,18 @@
 exports[`<CardWidget /> snapshot 1`] = `
 <div>
   <div
-    class="sc-dnqmqq fbWGcO"
+    class="sc-bdVaJa kHfmhG"
   >
     <div
-      class="sc-iwsKbI hQBmBE"
+      class="sc-bwzfXH fNOhzS"
     >
-      <h2>
-        Theme1
-      </h2>
+      2020년 1분기 기대신작 애니
       <a
-        class="sc-gZMcBi gWSprQ"
-        href="/widgetTest"
+        class="sc-htpNat gcCwzB"
+        href="/theme"
       >
         더보기
       </a>
-    </div>
-    <div
-      class="sc-gqjmRU jHofgo"
-    >
-      <div
-        class="sc-VigVT UDKFG"
-      />
     </div>
   </div>
 </div>

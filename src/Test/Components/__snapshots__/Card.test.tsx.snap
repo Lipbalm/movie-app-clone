@@ -3,30 +3,18 @@
 exports[`Card Component Card SnapShot 1`] = `
 <div>
   <div
-    class="sc-jTzLTM gEiCHi"
+    class="sc-EHOje dfvRiZ"
     data-testid="margin-test"
   >
     
     <div
-      class="sc-jzJRlG lhwmZp"
+      class="sc-gzVnrw cduVaT"
     >
       <img
         alt="no image"
-        class="sc-cSHVUG dvKLDq"
+        class="sc-htoDjs iphPbt"
         src="https://image.tmdb.org/t/p/w500//2CAL2433ZeIihfX1Hb2139CX0pW.jpg"
       />
-      <div>
-        <div
-          data-testid="genre"
-        >
-          unknown
-        </div>
-        <div
-          data-testid="name"
-        >
-          Dilwale Dulhania Le Jayenge
-        </div>
-      </div>
     </div>
   </div>
 </div>

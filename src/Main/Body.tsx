@@ -1,33 +1,14 @@
-import React, { FC, useEffect, useState } from "react";
-import { RouterHomeContainer, CarouselContainer, BodyWrapper } from "../Style";
-import { getGenreIds } from "../Modules/apis";
-import CardWidget from "../Components/WidgetComponents/CardWidget";
-import Loader from "../Components/UtilComponents/Loader";
+import React, { FC } from "react";
+import { RouterHomeContainer } from "../Styles/MainStyle";
+import { Route } from "react-router-dom";
+import MainPage from "./MainPage";
+import ThemePage from "./ThemePage";
 
 const Body: FC = () => {
-  const [load, setLoad] = useState<boolean>(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await getGenreIds("en-US");
-      } catch (e) {
-      } finally {
-        setLoad(false);
-      }
-    };
-    fetchData();
-  }, []);
-
-  return load ? (
-    <Loader />
-  ) : (
+  return (
     <RouterHomeContainer>
-      <CarouselContainer></CarouselContainer>
-      <BodyWrapper>
-        <CardWidget key="CardWidget1"></CardWidget>
-        {/* <CardWidget key="CardWidget2"></CardWidget>
-        <CardWidget key="CardWidget3"></CardWidget> */}
-      </BodyWrapper>
+      <Route path="/" exact component={MainPage}></Route>
+      <Route path="/theme" component={ThemePage}></Route>
     </RouterHomeContainer>
   );
 };

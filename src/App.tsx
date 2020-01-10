@@ -1,5 +1,5 @@
 import React from "react";
-import { AppContainer, GlobalStyle } from "./Style";
+import { AppContainer, GlobalStyle } from "./Styles/MainStyle";
 import Header from "./Main/Header";
 import { BrowserRouter } from "react-router-dom";
 import Body from "./Main/Body";
