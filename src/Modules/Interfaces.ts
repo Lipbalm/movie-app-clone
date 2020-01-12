@@ -30,3 +30,7 @@ export interface IGenreIds {
 export interface IMapGenreIds {
   [id: number]: string | null;
 }
+
+export interface VerticalItemProps {
+  isMargin: boolean;
+}

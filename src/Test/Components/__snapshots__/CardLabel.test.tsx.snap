@@ -1,20 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardLabel /> SnapShot 1`] = `undefined`;
-
-exports[`CardLabel SnapShot 1`] = `
+exports[`<CardLabel /> SnapShot 1`] = `
 <div>
-  <div>
-    <div
+  <div
+    class="sc-dnqmqq jPDSAr"
+  >
+    <span
+      class="sc-iwsKbI hdcvZB"
       data-testid="genre"
     >
-      SF
-    </div>
-    <div
-      data-testid="name"
+      35/18/10749
+    </span>
+    <a
+      class="sc-gZMcBi cVhhuH"
+      data-testid="title"
     >
-      메트릭스
-    </div>
+      Dilwale Dulhania Le Jayenge
+    </a>
   </div>
 </div>
 `;

@@ -2,8 +2,12 @@
 
 exports[`<ThemePage /> snapshot 1`] = `
 <div>
-  <div>
-    ThemaPage
+  <div
+    class="sc-ifAKCX cktARQ"
+  >
+    <div>
+      ThemePage
+    </div>
   </div>
 </div>
 `;

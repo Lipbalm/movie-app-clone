@@ -5,7 +5,7 @@ exports[`<CardWidget /> snapshot 1`] = `
   <div
     class="sc-bdVaJa kHfmhG"
   >
-    <div
+    <h2
       class="sc-bwzfXH fNOhzS"
     >
       2020년 1분기 기대신작 애니
@@ -15,6 +15,164 @@ exports[`<CardWidget /> snapshot 1`] = `
       >
         더보기
       </a>
+    </h2>
+    <div
+      class="sc-bxivhb bUZGRr"
+    >
+      <div
+        class="sc-ifAKCX kGuJUh"
+      >
+        <div
+          class="sc-EHOje dfvRiZ"
+          data-testid="card"
+        >
+          <div
+            class="sc-gzVnrw cduVaT"
+          >
+            <img
+              alt="no image"
+              class="sc-htoDjs iphPbt"
+              src="https://image.tmdb.org/t/p/w500//2CAL2433ZeIihfX1Hb2139CX0pW.jpg"
+            />
+          </div>
+          <div
+            class="sc-dnqmqq jPDSAr"
+          >
+            <span
+              class="sc-iwsKbI hdcvZB"
+              data-testid="genre"
+            >
+              35/18/10749
+            </span>
+            <a
+              class="sc-gZMcBi cVhhuH"
+              data-testid="title"
+            >
+              Dilwale Dulhania Le Jayenge
+            </a>
+          </div>
+        </div>
+        <div
+          class="sc-EHOje duGfYM"
+          data-testid="card"
+        >
+          <div
+            class="sc-gzVnrw cduVaT"
+          >
+            <img
+              alt="no image"
+              class="sc-htoDjs iphPbt"
+              src="https://image.tmdb.org/t/p/w500//9O7gLzmreU0nGkIB6K3BsJbzvNv.jpg"
+            />
+          </div>
+          <div
+            class="sc-dnqmqq jPDSAr"
+          >
+            <span
+              class="sc-iwsKbI hdcvZB"
+              data-testid="genre"
+            >
+              80/18
+            </span>
+            <a
+              class="sc-gZMcBi cVhhuH"
+              data-testid="title"
+            >
+              The Shawshank Redemption
+            </a>
+          </div>
+        </div>
+        <div
+          class="sc-EHOje duGfYM"
+          data-testid="card"
+        >
+          <div
+            class="sc-gzVnrw cduVaT"
+          >
+            <img
+              alt="no image"
+              class="sc-htoDjs iphPbt"
+              src="https://image.tmdb.org/t/p/w500//rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg"
+            />
+          </div>
+          <div
+            class="sc-dnqmqq jPDSAr"
+          >
+            <span
+              class="sc-iwsKbI hdcvZB"
+              data-testid="genre"
+            >
+              18/80
+            </span>
+            <a
+              class="sc-gZMcBi cVhhuH"
+              data-testid="title"
+            >
+              The Godfather
+            </a>
+          </div>
+        </div>
+        <div
+          class="sc-EHOje duGfYM"
+          data-testid="card"
+        >
+          <div
+            class="sc-gzVnrw cduVaT"
+          >
+            <img
+              alt="no image"
+              class="sc-htoDjs iphPbt"
+              src="https://image.tmdb.org/t/p/w500//yPisjyLweCl1tbgwgtzBCNCBle.jpg"
+            />
+          </div>
+          <div
+            class="sc-dnqmqq jPDSAr"
+          >
+            <span
+              class="sc-iwsKbI hdcvZB"
+              data-testid="genre"
+            >
+              18/36/10752
+            </span>
+            <a
+              class="sc-gZMcBi cVhhuH"
+              data-testid="title"
+            >
+              Schindler's List
+            </a>
+          </div>
+        </div>
+        <div
+          class="sc-EHOje duGfYM"
+          data-testid="card"
+        >
+          <div
+            class="sc-gzVnrw cduVaT"
+          >
+            <img
+              alt="no image"
+              class="sc-htoDjs iphPbt"
+              src="https://image.tmdb.org/t/p/w500//7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+            />
+          </div>
+          <div
+            class="sc-dnqmqq jPDSAr"
+          >
+            <span
+              class="sc-iwsKbI hdcvZB"
+              data-testid="genre"
+            >
+              35/18/53
+            </span>
+            <a
+              class="sc-gZMcBi cVhhuH"
+              data-testid="title"
+            >
+              Parasite
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

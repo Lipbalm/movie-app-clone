@@ -5,7 +5,7 @@ import { tempCard } from "../TempData/Card";
 import { baseImageURL } from "../../Modules/apis";
 
 const setup = () => {
-  const utils = render(<Card movie={tempCard} index={0} />);
+  const utils = render(<Card card_info={tempCard} index={0} />);
   return { ...utils };
 };
 
@@ -33,7 +33,7 @@ describe("Card Component", () => {
   it("Card Margin 확인", () => {
     const utils = setup();
     const { getByTestId } = utils;
-    const RectCard = getByTestId("margin-test");
+    const RectCard = getByTestId("card");
 
     expect(RectCard).toHaveStyle(`
       margin-left: 0;
@@ -42,10 +42,12 @@ describe("Card Component", () => {
 
   it("Card Click", () => {
     const { getByTestId } = setup();
-    const RectCard = getByTestId("margin-test");
+    const RectCard = getByTestId("card");
 
     fireEvent.click(RectCard);
 
-    expect(RectCard).toHaveTextContent("Clicked");
+    expect(RectCard).toHaveTextContent(
+      `${tempCard.genre_ids.join("/")}${tempCard.title}`
+    );
   });
 });

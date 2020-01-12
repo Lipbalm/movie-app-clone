@@ -15,7 +15,6 @@ const HeaderContainer = styled.div`
 `;
 
 const RouterHomeContainer = styled.div`
-  /* border-style: groove; */
   margin-top: 80px;
 `;
 
@@ -29,9 +28,13 @@ const BodyWrapper = styled.div`
 `;
 
 const GlobalStyle = createGlobalStyle`
+    html{
+      font-size: 16px
+    }
     body{
         padding: 0;
         margin: 0;
+        font-size: 16px
         /* width:100%;
         height:100%; */
     }

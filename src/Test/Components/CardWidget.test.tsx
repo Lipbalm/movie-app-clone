@@ -34,7 +34,7 @@ describe("<CardWidget />", () => {
 
   it("CardWidget get Contents", () => {
     const { getAllByTestId } = setup();
-    const cards = getAllByTestId("card");
+    const cards = getAllByTestId("title");
 
     cards.forEach((v, i) => {
       expect(v).toHaveTextContent(tempCards[i].title);

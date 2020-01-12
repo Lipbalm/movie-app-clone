@@ -45,7 +45,7 @@ const CardWidget: FC = () => {
           ) : (
             movies !== null &&
             movies.map((movie, index) => (
-              <Card key={index} movie={movie} index={index} />
+              <Card key={index} card_info={movie} index={index} />
             ))
           )}
         </WidgetContentsInner>

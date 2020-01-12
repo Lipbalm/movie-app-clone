@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { simpleDevice } from "./MediaStandard";
+import { VerticalItemProps } from "../Modules/Interfaces";
 
 const CardWidgetWrapper = styled.div`
   margin: auto;
   padding-top: 15px;
 `;
 
-const WidgetHead = styled.div`
+const WidgetHead = styled.h2`
   display: flex;
   align-items: center;
 `;
@@ -23,49 +23,16 @@ const WidgetLink = styled(Link)`
   font-weight: 300;
 `;
 
-const WidgetContents = styled.div`
-  /* padding-top: 24px; */
-  /* padding: 24px; */
-  /* border-style: groove; */
-  display: flex;
-  flex: 1, 0 auto;
-`;
+const WidgetContents = styled.div``;
 
 const WidgetContentsInner = styled.div`
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   font-size: 40px;
-
-  @media ${simpleDevice.desktopL} {
-    font-size: 38.5px;
-  }
-
-  @media ${simpleDevice.desktopM} {
-    font-size: 36px;
-  }
-
-  @media ${simpleDevice.desktopS} {
-    font-size: 34.5px;
-  }
-
-  @media ${simpleDevice.laptop} {
-    font-size: 32px;
-  }
-
-  @media ${simpleDevice.tablet} {
-    font-size: 28px;
-  }
-
-  @media ${simpleDevice.mobile} {
-    font-size: 26px;
-  }
+  width: 100%;
 `;
 
-interface RectCardProps {
-  isMargin: boolean;
-}
-
-const RectCard = styled.div<RectCardProps>`
+const RectCard = styled.div<VerticalItemProps>`
   width: 5.5em;
   height: 9.5em;
   box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.1);
@@ -93,6 +60,27 @@ const ThumnailImg = styled.img`
   height: 282px;
 `;
 
+const CardLabelContainer = styled.div`
+  display: block;
+  padding: 1rem 1rem 1.75rem;
+`;
+
+const GerenTag = styled.span`
+  display: block;
+  font-size: 0.9rem;
+  height: 1.5rem;
+  margin-bottom: 4px;
+`;
+
+const TitleTag = styled.a`
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+`;
+
 export {
   CardWidgetWrapper,
   WidgetHead,
@@ -102,5 +90,8 @@ export {
   RectCard,
   WidgetWarn,
   ThumnailWrapper,
-  ThumnailImg
+  ThumnailImg,
+  CardLabelContainer,
+  GerenTag,
+  TitleTag
 };

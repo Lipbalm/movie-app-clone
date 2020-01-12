@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ItemPage /> snapshot 1`] = `
+<div>
+  <div>
+    ItemPage
+  </div>
+</div>
+`;

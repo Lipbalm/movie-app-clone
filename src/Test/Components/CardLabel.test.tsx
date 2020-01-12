@@ -27,8 +27,8 @@ describe("<CardLabel />", () => {
     await asyncSetup().then(res => {
       const { getByTestId } = res;
       const genre = getByTestId("genre");
-      const name = getByTestId("name");
-      expect(genre).toHaveTextContent(changeGenreIdToName(genre_ids));
+      const name = getByTestId("title");
+      expect(genre).toHaveTextContent(genre_ids.join("/"));
       expect(name).toHaveTextContent(title);
     });
   });

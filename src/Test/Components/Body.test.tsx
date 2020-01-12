@@ -29,4 +29,14 @@ describe("<Body />", () => {
 
     expect(container.innerHTML).toMatch(/ThemePage/);
   });
+
+  it("Card Click", () => {
+    const { getAllByTestId, container } = setup();
+    const cards = getAllByTestId("card");
+
+    expect(container.innerHTML).toMatch("2020년");
+    fireEvent.click(cards[0]);
+
+    expect(container.innerHTML).toMatch(/ItemPage/);
+  });
 });

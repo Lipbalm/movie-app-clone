@@ -10,13 +10,13 @@ export default (): JSX.Element => {
   return (
     <HeaderLinkWrapper>
       <HeaderList>
-        <HeaderItem>
+        <HeaderItem isMargin={false}>
           <HeaderLink to="/theme1">theme1</HeaderLink>
         </HeaderItem>
-        <HeaderItem>
+        <HeaderItem isMargin={true}>
           <HeaderLink to="/theme2">theme2</HeaderLink>
         </HeaderItem>
-        <HeaderItem>
+        <HeaderItem isMargin={true}>
           <HeaderLink to="/theme3">theme3</HeaderLink>
         </HeaderItem>
       </HeaderList>

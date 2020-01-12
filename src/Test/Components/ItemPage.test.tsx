@@ -1,21 +1,21 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import MainPage from "../../Main/MainPage";
-import { Router } from "react-router-dom";
+import { render } from "@testing-library/react";
 import { createMemoryHistory } from "history";
+import { Router } from "react-router-dom";
+import ItemPage from "../../Main/ItemPage";
 
-function setup() {
+const setup = () => {
   const history = createMemoryHistory();
   return {
     ...render(
       <Router history={history}>
-        <MainPage />
+        <ItemPage />
       </Router>
     )
   };
-}
+};
 
-describe("<MainPage />", () => {
+describe("<ItemPage />", () => {
   it("snapshot", () => {
     const { container } = setup();
     expect(container).toMatchSnapshot();

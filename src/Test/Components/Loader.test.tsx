@@ -10,6 +10,6 @@ describe("<Loader />", () => {
 
   it("Loader 호출", () => {
     const utils = render(<Loader />);
-    expect(utils.getByText("Loading")).toBeTruthy();
+    expect(utils.getByText("Loading...")).toBeTruthy();
   });
 });

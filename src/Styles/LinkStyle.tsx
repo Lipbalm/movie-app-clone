@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { VerticalItemProps } from "../Modules/Interfaces";
 
 const HeaderLinkWrapper = styled.div`
   padding-left: 1rem;
@@ -17,15 +18,16 @@ const HeaderList = styled.div`
   display: flex;
 `;
 
-const HeaderItem = styled.div`
-  margin-left: 20px;
+const HeaderItem = styled.div<VerticalItemProps>`
+  font-size: 1.2rem;
+  margin-left: ${props => (props.isMargin ? "20px" : "0px")};
 `;
 
 const HeaderLink = styled(Link)`
   font-weight: 800;
   color: black;
   :hover {
-    color: green;
+    color: gray;
   }
 `;
 
