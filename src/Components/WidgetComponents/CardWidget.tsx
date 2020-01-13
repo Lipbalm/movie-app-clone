@@ -4,28 +4,41 @@ import {
   WidgetHead,
   WidgetLink,
   WidgetContents,
-  WidgetContentsInner
-} from "../../Styles/WidgetStyle";
+  WidgetContentsInner,
+  Separater,
+  Segment
+} from "./WidgetStyle";
 import { ITopRatedResults } from "../../Modules/Interfaces";
-import Card from "./Card";
+import { CardMd } from "./Card";
 
 interface IProp {
   head_text: string;
   cards: ITopRatedResults[];
+  card_path: string;
 }
 
-const CardWidget: FC<IProp> = ({ head_text, cards }) => {
+const CardWidget: FC<IProp> = ({ head_text, cards, card_path }) => {
   return (
     <CardWidgetWrapper>
       <WidgetHead>
         {head_text}
         <WidgetLink to="/theme">더보기</WidgetLink>
       </WidgetHead>
+
+      <Separater>
+        <Segment />
+      </Separater>
+
       <WidgetContents>
         <WidgetContentsInner>
           {cards.map(
             (v, i) => (
-              <Card card_info={v} index={i} key={i} />
+              <CardMd
+                card_info={v}
+                index={i}
+                key={i}
+                card_path={`${card_path}/${v.id}`}
+              />
             ),
             0
           )}

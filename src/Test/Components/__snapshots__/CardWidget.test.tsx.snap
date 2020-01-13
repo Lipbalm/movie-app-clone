@@ -23,7 +23,7 @@ exports[`<CardWidget /> snapshot 1`] = `
         class="sc-ifAKCX kGuJUh"
       >
         <div
-          class="sc-EHOje dfvRiZ"
+          class="sc-EHOje hytbQE"
           data-testid="card"
         >
           <div
@@ -53,7 +53,7 @@ exports[`<CardWidget /> snapshot 1`] = `
           </div>
         </div>
         <div
-          class="sc-EHOje duGfYM"
+          class="sc-EHOje hLaIap"
           data-testid="card"
         >
           <div
@@ -83,7 +83,7 @@ exports[`<CardWidget /> snapshot 1`] = `
           </div>
         </div>
         <div
-          class="sc-EHOje duGfYM"
+          class="sc-EHOje hLaIap"
           data-testid="card"
         >
           <div
@@ -113,7 +113,7 @@ exports[`<CardWidget /> snapshot 1`] = `
           </div>
         </div>
         <div
-          class="sc-EHOje duGfYM"
+          class="sc-EHOje hLaIap"
           data-testid="card"
         >
           <div
@@ -143,7 +143,7 @@ exports[`<CardWidget /> snapshot 1`] = `
           </div>
         </div>
         <div
-          class="sc-EHOje duGfYM"
+          class="sc-EHOje hLaIap"
           data-testid="card"
         >
           <div

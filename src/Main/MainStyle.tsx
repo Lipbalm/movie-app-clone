@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { Link } from "react-router-dom";
 
 const AppContainer = styled.div`
   width: inherit;
@@ -35,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         font-size: 16px
+        font-family: "apple-system","sens-arial"
         /* width:100%;
         height:100%; */
     }

@@ -29,7 +29,7 @@ exports[`<MainPage /> snapshot 1`] = `
           class="sc-dnqmqq dObvuR"
         >
           <div
-            class="sc-iwsKbI fdCiff"
+            class="sc-iwsKbI bvaxaW"
             data-testid="card"
           >
             <div
@@ -59,7 +59,7 @@ exports[`<MainPage /> snapshot 1`] = `
             </div>
           </div>
           <div
-            class="sc-iwsKbI buVUVn"
+            class="sc-iwsKbI jzQOIM"
             data-testid="card"
           >
             <div
@@ -89,7 +89,7 @@ exports[`<MainPage /> snapshot 1`] = `
             </div>
           </div>
           <div
-            class="sc-iwsKbI buVUVn"
+            class="sc-iwsKbI jzQOIM"
             data-testid="card"
           >
             <div
@@ -119,7 +119,7 @@ exports[`<MainPage /> snapshot 1`] = `
             </div>
           </div>
           <div
-            class="sc-iwsKbI buVUVn"
+            class="sc-iwsKbI jzQOIM"
             data-testid="card"
           >
             <div
@@ -149,7 +149,7 @@ exports[`<MainPage /> snapshot 1`] = `
             </div>
           </div>
           <div
-            class="sc-iwsKbI buVUVn"
+            class="sc-iwsKbI jzQOIM"
             data-testid="card"
           >
             <div

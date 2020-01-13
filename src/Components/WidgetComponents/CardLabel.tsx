@@ -1,10 +1,5 @@
 import React, { FC } from "react";
-import { changeGenreIdToName } from "../../Modules/utils";
-import {
-  CardLabelContainer,
-  GerenTag,
-  TitleTag
-} from "../../Styles/WidgetStyle";
+import { CardLabelContainer, GerenTag, TitleTag } from "./WidgetStyle";
 
 interface IProps {
   genre_ids: number[];

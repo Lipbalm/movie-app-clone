@@ -4,7 +4,7 @@ import {
   HeaderItem,
   HeaderLinkWrapper,
   HeaderLink
-} from "../../Styles/LinkStyle";
+} from "./LinkStyle";
 
 export default (): JSX.Element => {
   return (

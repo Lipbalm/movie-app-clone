@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { BodyWrapper } from "../Styles/MainStyle";
+import { BodyWrapper } from "./MainStyle";
 const ThemePage: FC = () => {
   return (
     <BodyWrapper>

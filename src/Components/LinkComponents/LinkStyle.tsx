@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { VerticalItemProps } from "../Modules/Interfaces";
+import { VerticalItemProps } from "../../Modules/Interfaces";
 
 const HeaderLinkWrapper = styled.div`
   padding-left: 1rem;

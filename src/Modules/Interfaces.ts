@@ -34,3 +34,13 @@ export interface IMapGenreIds {
 export interface VerticalItemProps {
   isMargin: boolean;
 }
+
+export interface IMatchParams {
+  id: string;
+}
+
+export interface ICardProps {
+  card_info: ITopRatedResults;
+  index: number;
+  card_path: string;
+}
