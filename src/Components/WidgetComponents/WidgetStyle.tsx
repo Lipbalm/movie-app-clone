@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { IStyleProps } from "../../Modules/Interfaces";
 
-const CardWidgetWrapper = styled.div`
+const WidgetWrapper = styled.div`
   margin: auto;
   padding-top: 15px;
   width: 100%;
@@ -96,21 +97,40 @@ const ThumnailImg = styled.img`
   height: inherit;
 `;
 
-const CardLabelContainer = styled.div`
+const BottomTagContainer = styled.div`
   display: block;
   padding: 1rem 1rem 1.75rem;
+  background-color: transparent;
 `;
 
-const GerenTag = styled.span`
+const OverlayTagContainer = styled.div<IStyleProps>`
+  position: absolute;
+  width: 80%;
+  bottom: 0;
+  padding: ${props => props.padding};
+  background-color: transparent;
+`;
+
+const BottomGerenTag = styled.span`
   display: block;
   font-size: 0.9rem;
   height: 1.5rem;
   margin-bottom: 4px;
 `;
 
-const TitleTag = styled.a`
+const BottomTitleTag = styled.a`
   display: block;
   font-size: 1.15rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+`;
+
+const OverlayTitleTag = styled.a<IStyleProps>`
+  display: block;
+  color: white;
+  font-size: ${props => props.fontSize};
   font-weight: 600;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -134,7 +154,7 @@ const Segment = styled.div`
 `;
 
 export {
-  CardWidgetWrapper,
+  WidgetWrapper,
   WidgetHead,
   WidgetLink,
   WidgetContents,
@@ -146,9 +166,11 @@ export {
   CardThumnailWrapper,
   ThumnailWrapper,
   ThumnailImg,
-  CardLabelContainer,
-  GerenTag,
-  TitleTag,
+  BottomTagContainer,
+  OverlayTagContainer,
+  BottomGerenTag,
+  BottomTitleTag,
+  OverlayTitleTag,
   Separater,
   Segment
 };

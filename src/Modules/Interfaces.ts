@@ -44,3 +44,11 @@ export interface ICardProps {
   index: number;
   card_path: string;
 }
+
+export interface IStyleProps {
+  padding?: string;
+  margin?: string;
+  width?: string;
+  height?: string;
+  fontSize?: string;
+}

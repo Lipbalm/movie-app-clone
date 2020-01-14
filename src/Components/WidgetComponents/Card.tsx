@@ -6,71 +6,75 @@ import {
   RectCardMd,
   RectCardSm,
   CardThumnailWrapper,
-  ThumnailImg
+  ThumnailImg,
+  ThumnailWrapper
 } from "./WidgetStyle";
 import { baseImageURL } from "../../Modules/apis";
-import CardLabel from "./CardLabel";
+import { BottomTag, OverlayTag } from "./CardTag";
 import { ICardProps } from "../../Modules/Interfaces";
 
 const history = createBrowserHistory();
 
 export const CardMd: FC<ICardProps> = ({ card_info, index, card_path }) => {
-  const [redirect, setRedirect] = useState<boolean>(false);
+  const [clicked, setClicked] = useState<boolean>(false);
   const { id, genre_ids, title, poster_path } = card_info;
 
+  const genres = genre_ids.join("/");
   const handleClick = () => {
-    setRedirect(true);
+    setClicked(true);
     history.push(card_path);
   };
 
-  return redirect ? (
+  return clicked ? (
     <Redirect to={card_path} />
   ) : (
     <RectCardMd key={id} data-testid="card" onClick={handleClick}>
       <CardThumnailWrapper>
         <ThumnailImg src={`${baseImageURL}${poster_path}`} alt="no image" />
       </CardThumnailWrapper>
-      <CardLabel genre_ids={genre_ids} title={title} />
+      <BottomTag genres={genres} title={title} />
     </RectCardMd>
   );
 };
 
 export const CardLg: FC<ICardProps> = ({ card_info, index, card_path }) => {
-  const [redirect, setRedirect] = useState<boolean>(false);
+  const [clicked, setClicked] = useState<boolean>(false);
   const { id, title, poster_path } = card_info;
 
   const handleClick = () => {
-    setRedirect(true);
+    setClicked(true);
     history.push(card_path);
   };
 
-  return redirect ? (
+  return clicked ? (
     <Redirect to={card_path} />
   ) : (
     <RectCardLg key={id} data-testid="card" onClick={handleClick}>
-      <CardThumnailWrapper>
+      <ThumnailWrapper>
+        <OverlayTag title={title} type="lg" />
         <ThumnailImg src={`${baseImageURL}${poster_path}`} alt="no image" />
-      </CardThumnailWrapper>
+      </ThumnailWrapper>
     </RectCardLg>
   );
 };
 
 export const CardSm: FC<ICardProps> = ({ card_info, index, card_path }) => {
-  const [redirect, setRedirect] = useState<boolean>(false);
+  const [clicked, setClicked] = useState<boolean>(false);
   const { id, title, poster_path } = card_info;
 
   const handleClick = () => {
-    setRedirect(true);
+    setClicked(true);
     history.push(card_path);
   };
 
-  return redirect ? (
+  return clicked ? (
     <Redirect to={card_path} />
   ) : (
     <RectCardSm key={id} data-testid="card" onClick={handleClick}>
-      <CardThumnailWrapper>
+      <ThumnailWrapper>
+        <OverlayTag title={title} type="sm" />
         <ThumnailImg src={`${baseImageURL}${poster_path}`} alt="no image" />
-      </CardThumnailWrapper>
+      </ThumnailWrapper>
     </RectCardSm>
   );
 };

@@ -13,7 +13,7 @@ const setup = () => {
   return { ...utils };
 };
 
-describe("Card Component", () => {
+describe("<Card />", () => {
   it("Card SnapShot", () => {
     const { container } = setup();
     expect(container).toMatchSnapshot();

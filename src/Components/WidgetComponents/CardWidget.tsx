@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import {
-  CardWidgetWrapper,
+  WidgetWrapper,
   WidgetHead,
   WidgetLink,
   WidgetContents,
@@ -19,7 +19,7 @@ interface IProp {
 
 const CardWidget: FC<IProp> = ({ head_text, cards, card_path }) => {
   return (
-    <CardWidgetWrapper>
+    <WidgetWrapper>
       <WidgetHead>
         {head_text}
         <WidgetLink to="/theme">더보기</WidgetLink>
@@ -44,7 +44,7 @@ const CardWidget: FC<IProp> = ({ head_text, cards, card_path }) => {
           )}
         </WidgetContentsInner>
       </WidgetContents>
-    </CardWidgetWrapper>
+    </WidgetWrapper>
   );
 };
 

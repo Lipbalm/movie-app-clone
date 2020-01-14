@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { CarouselContainer, BodyWrapper } from "./MainStyle";
 import CardWidget from "../Components/WidgetComponents/CardWidget";
 import { tempCards } from "../Test/TempData/Card";
+import ThemeWidget from "../Components/WidgetComponents/ThemeWidget";
 
 const MainPage: FC = () => {
   return (
@@ -14,6 +15,7 @@ const MainPage: FC = () => {
           key="card_widget_1"
           card_path={"/item"}
         ></CardWidget>
+        <ThemeWidget></ThemeWidget>
       </BodyWrapper>
     </>
   );
