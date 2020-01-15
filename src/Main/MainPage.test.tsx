@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import MainPage from "../../Main/MainPage";
+import MainPage from "./MainPage";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 

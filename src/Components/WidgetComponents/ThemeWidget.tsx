@@ -7,8 +7,8 @@ import {
   Separater,
   Segment,
   WidgetWrapper,
-  WidgetContentsInner,
-  WidgetContents
+  WidgetContents,
+  WidgetContentsColumn
 } from "./WidgetStyle";
 const ThemeWidget = () => {
   return (
@@ -22,17 +22,17 @@ const ThemeWidget = () => {
         <Segment />
       </Separater>
       <WidgetContents>
-        <WidgetContentsInner>
+        <WidgetContentsColumn padding={"0 0 0 0"}>
           <CardLg card_info={tempCard} index={0} card_path={"/item"} />
-        </WidgetContentsInner>
-        <WidgetContentsInner>
+        </WidgetContentsColumn>
+        <WidgetContentsColumn padding={"0 0 0 24px"}>
           <CardSm card_info={tempCard} index={0} card_path={"/item"} />
           <CardSm card_info={tempCard} index={0} card_path={"/item"} />
           <CardSm card_info={tempCard} index={0} card_path={"/item"} />
           <CardSm card_info={tempCard} index={0} card_path={"/item"} />
           <CardSm card_info={tempCard} index={0} card_path={"/item"} />
           <CardSm card_info={tempCard} index={0} card_path={"/item"} />
-        </WidgetContentsInner>
+        </WidgetContentsColumn>
       </WidgetContents>
     </WidgetWrapper>
   );

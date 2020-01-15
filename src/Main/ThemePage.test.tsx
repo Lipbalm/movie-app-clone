@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import ThemePage from "../../Main/ThemePage";
+import ThemePage from "./ThemePage";
 
 function setup() {
   return { ...render(<ThemePage />) };

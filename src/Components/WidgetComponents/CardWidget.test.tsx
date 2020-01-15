@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { createMemoryHistory } from "history";
-import CardWidget from "../../Components/WidgetComponents/CardWidget";
+import CardWidget from "./CardWidget";
 import { Router } from "react-router-dom";
-import { tempCards } from "../TempData/Card";
+import { tempCards } from "../../Test/TempData/Card";
 
 const setup = () => {
   const history = createMemoryHistory();

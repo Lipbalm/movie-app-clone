@@ -1,10 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import {
-  BottomTag,
-  OverlayTag
-} from "../../Components/WidgetComponents/CardTag";
-import { tempCard } from "../TempData/Card";
+import { BottomTag, OverlayTag } from "./CardTag";
+import { tempCard } from "../../Test/TempData/Card";
 import { getGenreIds } from "../../Modules/apis";
 //import { changeGenreIdToName } from "../../Modules/utils";
 

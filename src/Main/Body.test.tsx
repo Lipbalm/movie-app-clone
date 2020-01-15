@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { Router } from "react-router-dom";
-import Body from "../../Main/Body";
+import Body from "./Body";
 import { createMemoryHistory } from "history";
 
 const setup = () => {

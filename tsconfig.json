@@ -15,5 +15,12 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["src", "src/setupTest.ts"]
+  "include": [
+    "src",
+    "src/setupTest.ts",
+    "Body.test.tsx",
+    "ItemPage.test.tsx",
+    "MainPage.test.tsx",
+    "ThemePage.test.tsx"
+  ]
 }

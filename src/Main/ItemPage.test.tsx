@@ -2,8 +2,8 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { Router, RouteComponentProps, match } from "react-router-dom";
-import ItemPage from "../../Main/ItemPage";
-import { IMatchParams } from "../../Modules/Interfaces";
+import ItemPage from "./ItemPage";
+import { IMatchParams } from "../Modules/Interfaces";
 
 // let testProps: RouteComponentProps<IMatchParams> = {
 //   match:{

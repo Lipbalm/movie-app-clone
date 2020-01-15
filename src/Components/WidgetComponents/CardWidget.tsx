@@ -11,13 +11,13 @@ import {
 import { ITopRatedResults } from "../../Modules/Interfaces";
 import { CardMd } from "./Card";
 
-interface IProp {
+interface IProps {
   head_text: string;
   cards: ITopRatedResults[];
   card_path: string;
 }
 
-const CardWidget: FC<IProp> = ({ head_text, cards, card_path }) => {
+const CardWidget: FC<IProps> = ({ head_text, cards, card_path }) => {
   return (
     <WidgetWrapper>
       <WidgetHead>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { isStyledComponent } from "styled-components";
 import { Link } from "react-router-dom";
 import { IStyleProps } from "../../Modules/Interfaces";
 
@@ -7,7 +7,6 @@ const WidgetWrapper = styled.div`
   padding-top: 15px;
   width: 100%;
 `;
-
 const WidgetHead = styled.h2`
   display: flex;
   align-items: center;
@@ -37,31 +36,15 @@ const WidgetContentsInner = styled.div`
   justify-content: space-between;
 `;
 
-const RectCardMd = styled.div`
+const WidgetContentsColumn = styled.div<IStyleProps>`
+  display: flex;
+  flex-wrap: wrap;
+  margin: ${props => props.padding};
+`;
+
+const RectCard = styled.div`
   width: 13.75rem;
   height: 23.75rem;
-  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in;
-  :hover {
-    cursor: pointer;
-    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.5);
-  }
-`;
-
-const RectCardLg = styled.div`
-  width: 36.75rem;
-  height: 24rem;
-  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in;
-  :hover {
-    cursor: pointer;
-    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.5);
-  }
-`;
-
-const RectCardSm = styled.div`
-  width: 11.25rem;
-  height: 11.25rem;
   box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease-in;
   :hover {
@@ -77,24 +60,77 @@ const WidgetWarn = styled.div`
   font-size: 0.7rem;
 `;
 
-const CardThumnailWrapper = styled.div`
-  width: inherit;
-  height: 17.625rem;
+interface IBase {
+  basis: Object;
+  effect: Object;
+}
+
+export interface IStyledProps {
+  styleObj: Object;
+}
+
+const ThemeItemWrapperStyle: IBase = {
+   basis: {
+    "display": "flex;",
+    "margin": "flex;",
+    "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.1);",
+    "transition": "box-shadow 0.3s ease-in;"
+  },
+  effect: {
+    ":hover": {
+      "cursor": "pointer;",
+      "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.5);"
+    }
+  }
+};
+
+const a = [{
+  "display": "flex;",
+  "margin": "0 0 0 0;",
+  "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.1);",
+  "transition": "box-shadow 0.3s ease-in;"
+},{
+  ":hover": {
+    "cursor": "pointer;",
+    "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.5);"
+  }
+}]
+
+const combineStyle = (origin:Array<Object>, replace: Array<Object>) => {
+  const [originBasis, originEffect] = origin;
+  const [replaceBasis, replaceEffect] = replace;
+
+  const combineBasis = Object.assign(originBasis, replaceBasis);
+
+  const combineEffect = Object.entries(replaceEffect).forEach(v => )
+};
+
+const ThemeItemWrapper = styled.div<IStyledProps>``;
+
+// const ThemeItemWrapper = styled.div<IStyleProps>`
+//   display: flex;
+//   margin: ${props => props.margin};
+//   box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.1);
+//   transition: box-shadow 0.3s ease-in;
+//   :hover {
+//     cursor: pointer;
+//     box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.5);
+//   }
+// `;
+
+const ThumnailWrapper = styled.div<IStyleProps>`
+  width: ${props => props.width};
+  height: ${props => props.height};
   position: relative;
   overflow: hidden;
 `;
 
-const ThumnailWrapper = styled.div`
-  width: inherit;
-  height: inherit;
-  position: relative;
-  overflow: hidden;
-`;
-
-const ThumnailImg = styled.img`
+const Thumnail = styled.div`
   text-align: center;
-  width: inherit;
-  height: inherit;
+`;
+
+const ThemeItemLayer = styled.div<IStyleProps>`
+  position: absolute;
 `;
 
 const BottomTagContainer = styled.div`
@@ -159,18 +195,18 @@ export {
   WidgetLink,
   WidgetContents,
   WidgetContentsInner,
-  RectCardMd,
-  RectCardLg,
-  RectCardSm,
+  RectCard,
   WidgetWarn,
-  CardThumnailWrapper,
   ThumnailWrapper,
-  ThumnailImg,
+  Thumnail,
   BottomTagContainer,
   OverlayTagContainer,
   BottomGerenTag,
   BottomTitleTag,
   OverlayTitleTag,
   Separater,
-  Segment
+  Segment,
+  WidgetContentsColumn,
+  ThemeItemWrapper,
+  ThemeItemLayer
 };

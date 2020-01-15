@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Loader from "../../Components/UtilComponents/Loader";
+import Loader from "./Loader";
 
 describe("<Loader />", () => {
   it("snapshot", () => {

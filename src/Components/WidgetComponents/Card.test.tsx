@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { CardLg, CardMd, CardSm } from "../../Components/WidgetComponents/Card";
-import { tempCard } from "../TempData/Card";
+import { CardLg, CardMd, CardSm } from "./Card";
+import { tempCard } from "../../Test/TempData/Card";
 import { baseImageURL } from "../../Modules/apis";
 
 const setup = () => {
