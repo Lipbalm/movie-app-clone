@@ -60,52 +60,49 @@ const WidgetWarn = styled.div`
   font-size: 0.7rem;
 `;
 
-interface IBase {
-  basis: Object;
-  effect: Object;
+interface IStyleProperty {
+  [key: string]: string;
+}
+interface ICSSPesudo {
+  [key: string]: IStyleProperty;
+}
+export interface IStyleFrame {
+  basis: IStyleProperty;
+  pesudo: ICSSPesudo;
 }
 
-export interface IStyledProps {
-  styleObj: Object;
+export interface ITemp {
+  styleObj: IStyleFrame;
 }
 
-const ThemeItemWrapperStyle: IBase = {
-   basis: {
-    "display": "flex;",
-    "margin": "flex;",
+const ThemeItemWrapperStyle: IStyleFrame = {
+  basis: {
+    display: "flex;",
+    margin: "flex;",
     "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.1);",
-    "transition": "box-shadow 0.3s ease-in;"
+    transition: "box-shadow 0.3s ease-in;"
   },
-  effect: {
+  pesudo: {
     ":hover": {
-      "cursor": "pointer;",
+      cursor: "pointer;",
       "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.5);"
     }
   }
 };
 
-const a = [{
-  "display": "flex;",
-  "margin": "0 0 0 0;",
-  "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.1);",
-  "transition": "box-shadow 0.3s ease-in;"
-},{
-  ":hover": {
-    "cursor": "pointer;",
-    "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.5);"
-  }
-}]
-
-const combineStyle = (origin:Array<Object>, replace: Array<Object>) => {
-  const [originBasis, originEffect] = origin;
-  const [replaceBasis, replaceEffect] = replace;
-
-  const combineBasis = Object.assign(originBasis, replaceBasis);
-
-  const combineEffect = Object.entries(replaceEffect).forEach(v => )
+const combineStyle = (origin: IStyleFrame, replace: IStyleFrame) => {
+  const combineBasis = Object.assign(origin.basis, replace.basis);
+  console.log(combineBasis);
+  const combinePesudo = Object.entries(replace.pesudo).map(value => {
+    let style = Object.assign(origin.pesudo[value[0]], value[1]);
+    return [value[0], style];
+  });
+  console.log(combinePesudo);
 };
 
-const ThemeItemWrapper = styled.div<IStyledProps>``;
+const ThemeItemWrapper = styled.div<ITemp>`
+  ${props => combineStyle(ThemeItemWrapperStyle)}
+`;
 
 // const ThemeItemWrapper = styled.div<IStyleProps>`
 //   display: flex;

@@ -4,12 +4,19 @@ import {
   ThumnailWrapper,
   Thumnail,
   ThemeItemLayer,
-  OverlayTitleTag
+  OverlayTitleTag,
+  IStyleFrame
 } from "./WidgetStyle";
 
 export const BigItem: FC = () => {
+  const itemWrapperStyle: IStyleFrame = {
+    basis: {
+      margin: "0 0 0 0"
+    },
+    pesudo: {}
+  };
   return (
-    <ThemeItemWrapper margin={"0 0 0 0"}>
+    <ThemeItemWrapper {...itemWrapperStyle}>
       <ThumnailWrapper width={"36.75rem"} height={"24rem"}>
         <Thumnail />
       </ThumnailWrapper>
