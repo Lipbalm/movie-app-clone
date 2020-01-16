@@ -40,15 +40,7 @@ export interface IMatchParams {
 }
 
 export interface ICardProps {
-  card_info: ITopRatedResults;
+  info: ITopRatedResults;
   index: number;
-  card_path: string;
-}
-
-export interface IStyleProps {
-  padding?: string;
-  margin?: string;
-  width?: string;
-  height?: string;
-  fontSize?: string;
+  path: string;
 }

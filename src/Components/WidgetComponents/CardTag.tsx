@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import {
-  BottomTagContainer,
+  BottomTagWrapper,
   BottomGerenTag,
   BottomTitleTag,
-  OverlayTagContainer,
+  OverlayTagWrapper,
   OverlayTitleTag
 } from "./WidgetStyle";
-import { IStyleProps } from "../../Modules/Interfaces";
+import { IStyleFrame } from "../../Modules/StyleInterfaces";
 
 interface IProps {
   genres?: string;
@@ -16,32 +16,33 @@ interface IProps {
 
 export const BottomTag: FC<IProps> = ({ genres, title }) => {
   return (
-    <BottomTagContainer>
+    <BottomTagWrapper>
       <BottomGerenTag data-testid="genre">
         {genres === undefined || genres}
       </BottomGerenTag>
       <BottomTitleTag data-testid="title">{title}</BottomTitleTag>
-    </BottomTagContainer>
+    </BottomTagWrapper>
   );
 };
 
 export const OverlayTag: FC<IProps> = ({ title, type }) => {
-  let style: IStyleProps;
-  style =
-    type === "lg"
-      ? {
-          padding: "0.8rem 0.8rem 1.2rem",
-          fontSize: "1.5rem"
-        }
-      : {
-          padding: "0.5rem 0.5rem 0.7rem",
-          fontSize: "0.875rem"
-        };
+  const overlayWrapperStyle: IStyleFrame = {
+    basis: {
+      "padding": "0.8rem 0.8rem 1.2rem"
+    }
+  };
+
+  const overlayTitleTagStyle: IStyleFrame = {
+    basis: {
+      "fontSize": "1.5rem"
+    }
+  };
+
   return (
-    <OverlayTagContainer padding={style.padding} width={"inherit"}>
-      <OverlayTitleTag data-testid="title" fontSize={style.fontSize}>
+    <OverlayTagWrapper {...overlayWrapperStyle}>
+      <OverlayTitleTag data-testid="title" {...overlayTitleTagStyle}>
         {title}
       </OverlayTitleTag>
-    </OverlayTagContainer>
+    </OverlayTagWrapper>
   );
 };

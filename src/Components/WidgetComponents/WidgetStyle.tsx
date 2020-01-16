@@ -1,209 +1,237 @@
-import styled, { isStyledComponent } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { IStyleProps } from "../../Modules/Interfaces";
+import { IStyleFrame, IStyle } from "../../Modules/StyleInterfaces";
+import { combineStyle } from "../../Modules/utils";
 
-const WidgetWrapper = styled.div`
-  margin: auto;
-  padding-top: 15px;
-  width: 100%;
-`;
-const WidgetHead = styled.h2`
-  display: flex;
-  align-items: center;
-`;
-
-const WidgetLink = styled(Link)`
-  color: #797979;
-  font-size: 1.1rem;
-  margin-left: auto;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  font-weight: 300;
-`;
-
-const WidgetContents = styled.div`
-  display: flex;
-  width: 100%;
-  padding-top: 24px;
-`;
-
-const WidgetContentsInner = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-between;
-`;
-
-const WidgetContentsColumn = styled.div<IStyleProps>`
-  display: flex;
-  flex-wrap: wrap;
-  margin: ${props => props.padding};
-`;
-
-const RectCard = styled.div`
-  width: 13.75rem;
-  height: 23.75rem;
-  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in;
-  :hover {
-    cursor: pointer;
-    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.5);
-  }
-`;
-
-const WidgetWarn = styled.div`
-  text-align: center;
-  width: inherit;
-  height: inherit;
-  font-size: 0.7rem;
-`;
-
-interface IStyleProperty {
-  [key: string]: string;
-}
-interface ICSSPesudo {
-  [key: string]: IStyleProperty;
-}
-export interface IStyleFrame {
-  basis: IStyleProperty;
-  pesudo: ICSSPesudo;
-}
-
-export interface ITemp {
-  styleObj: IStyleFrame;
-}
-
-const ThemeItemWrapperStyle: IStyleFrame = {
+const widgetWrapperStyle: IStyleFrame = {
   basis: {
-    display: "flex;",
-    margin: "flex;",
-    "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.1);",
-    transition: "box-shadow 0.3s ease-in;"
+    "margin": "auto",
+    "padding-top": "15px",
+    "width": "100%"
+  }
+};
+
+export const WidgetWrapper = styled.div<IStyle>`
+  ${props => combineStyle(widgetWrapperStyle, props.styleObj)}
+`;
+
+const widgetHead: IStyleFrame = {
+  basis: {
+    "display": "flex",
+    "align-items": "center"
+  }
+};
+
+export const WidgetHead = styled.h2<IStyle>`
+  ${props => combineStyle(widgetHead, props.styleObj)}
+`;
+
+const widgetLinkStyle: IStyleFrame = {
+  basis: {
+    "color": "#797979",
+    "font-size": "1.1rem",
+    "margin-left": "auto",
+    "display": "-webkit-flex",
+    "-webkit-align-items": "center",
+    "align-items": "center",
+    "font-weight": "300"
+  }
+};
+
+export const WidgetLink = styled(Link)<{ styleObj?: IStyleFrame }>`
+  ${props => combineStyle(widgetLinkStyle, props.styleObj)}
+`;
+
+const widgetContentsStyle: IStyleFrame = {
+  basis: {
+    "display": "flex",
+    "width": "100%",
+    "padding-top": "24px"
+  }
+};
+
+export const WidgetContents = styled.div<IStyle>`
+  ${props => combineStyle(widgetContentsStyle, props.styleObj)}
+`;
+
+const widgetContentsInnerStyle: IStyleFrame = {
+  basis: {
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "width": "100%",
+    "justify-content": "space-between"
+  }
+};
+
+export const WidgetContentsInner = styled.div<IStyle>`
+  ${props => combineStyle(widgetContentsInnerStyle, props.styleObj)}
+`;
+
+const WidgetContentsColumnStyle: IStyleFrame = {
+  basis: {
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "margin": "0 0 0 0"
+  }
+};
+
+export const WidgetContentsColumn = styled.div<IStyle>`
+  ${props => combineStyle(WidgetContentsColumnStyle, props.styleObj)}
+`;
+
+const rectCardStyle: IStyleFrame = {
+  basis: {
+    "width": "13.75rem",
+    "height": "23.75rem",
+    "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.1)",
+    "transition": "box-shadow 0.3s ease-in"
   },
   pesudo: {
     ":hover": {
-      cursor: "pointer;",
-      "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.5);"
+      "cursor": "pointer",
+      "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.5)"
     }
   }
 };
 
-const combineStyle = (origin: IStyleFrame, replace: IStyleFrame) => {
-  const combineBasis = Object.assign(origin.basis, replace.basis);
-  console.log(combineBasis);
-  const combinePesudo = Object.entries(replace.pesudo).map(value => {
-    let style = Object.assign(origin.pesudo[value[0]], value[1]);
-    return [value[0], style];
-  });
-  console.log(combinePesudo);
+export const RectCard = styled.div<IStyle>`
+  ${props => combineStyle(rectCardStyle, props.styleObj)}
+`;
+
+const themeItemWrapperStyle: IStyleFrame = {
+  basis: {
+    "display": "flex",
+    "margin": "0 0 0 0",
+    "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.1)",
+    "transition": "box-shadow 0.3s ease-in"
+  },
+  pesudo: {
+    ":hover": {
+      "cursor": "pointer",
+      "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.5)"
+    }
+  }
+};
+export const ThemeItemWrapper = styled.div<IStyle>`
+  ${props => combineStyle(themeItemWrapperStyle, props.styleObj)}
+`;
+
+const thumnailWrapper: IStyleFrame = {
+  basis: {
+    "position": "relative",
+    "overflow": "hidden"
+  }
+};
+export const ThumnailWrapper = styled.div<IStyle>`
+  ${props => combineStyle(thumnailWrapper, props.styleObj)}
+`;
+
+const thumnailStyle: IStyleFrame = {
+  basis: { "text-align": "center" }
+};
+export const Thumnail = styled.div<IStyle>`
+  ${props => combineStyle(thumnailStyle, props.styleObj)}
+`;
+
+const themeItemLayerStyle: IStyleFrame = {
+  basis: {
+    "position": "absolute"
+  }
+};
+export const ThemeItemLayer = styled.div<IStyle>`
+  ${props => combineStyle(themeItemLayerStyle, props.styleObj)}
+`;
+
+const bottomTagWrapperStyle: IStyleFrame = {
+  basis: {
+    "display": "block",
+    "padding": "1rem 1rem 1.75rem",
+    "background-color": "transparent"
+  }
 };
 
-const ThemeItemWrapper = styled.div<ITemp>`
-  ${props => combineStyle(ThemeItemWrapperStyle)}
+export const BottomTagWrapper = styled.div<IStyle>`
+  ${props => combineStyle(bottomTagWrapperStyle, props.styleObj)}
 `;
 
-// const ThemeItemWrapper = styled.div<IStyleProps>`
-//   display: flex;
-//   margin: ${props => props.margin};
-//   box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.1);
-//   transition: box-shadow 0.3s ease-in;
-//   :hover {
-//     cursor: pointer;
-//     box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.5);
-//   }
-// `;
-
-const ThumnailWrapper = styled.div<IStyleProps>`
-  width: ${props => props.width};
-  height: ${props => props.height};
-  position: relative;
-  overflow: hidden;
-`;
-
-const Thumnail = styled.div`
-  text-align: center;
-`;
-
-const ThemeItemLayer = styled.div<IStyleProps>`
-  position: absolute;
-`;
-
-const BottomTagContainer = styled.div`
-  display: block;
-  padding: 1rem 1rem 1.75rem;
-  background-color: transparent;
-`;
-
-const OverlayTagContainer = styled.div<IStyleProps>`
-  position: absolute;
-  width: 80%;
-  bottom: 0;
-  padding: ${props => props.padding};
-  background-color: transparent;
-`;
-
-const BottomGerenTag = styled.span`
-  display: block;
-  font-size: 0.9rem;
-  height: 1.5rem;
-  margin-bottom: 4px;
-`;
-
-const BottomTitleTag = styled.a`
-  display: block;
-  font-size: 1.15rem;
-  font-weight: 600;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-`;
-
-const OverlayTitleTag = styled.a<IStyleProps>`
-  display: block;
-  color: white;
-  font-size: ${props => props.fontSize};
-  font-weight: 600;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-`;
-
-const Separater = styled.div`
-  width: 100%;
-  height: 2px;
-  background-color: #ebdddd;
-  margin-top: 1rem;
-  position: relative;
-`;
-
-const Segment = styled.div`
-  width: 7rem;
-  height: 4px;
-  background-color: #e34d4d;
-  top: -1px;
-  position: absolute;
-`;
-
-export {
-  WidgetWrapper,
-  WidgetHead,
-  WidgetLink,
-  WidgetContents,
-  WidgetContentsInner,
-  RectCard,
-  WidgetWarn,
-  ThumnailWrapper,
-  Thumnail,
-  BottomTagContainer,
-  OverlayTagContainer,
-  BottomGerenTag,
-  BottomTitleTag,
-  OverlayTitleTag,
-  Separater,
-  Segment,
-  WidgetContentsColumn,
-  ThemeItemWrapper,
-  ThemeItemLayer
+const overlayTagWrapperStyle: IStyleFrame = {
+  basis: {
+    "position": "absolute",
+    "width": "80%",
+    "bottom": "0",
+    "padding": "0",
+    "background-color": "transparent"
+  }
 };
+export const OverlayTagWrapper = styled.div<IStyle>`
+  ${props => combineStyle(overlayTagWrapperStyle, props.styleObj)}
+`;
+
+const bottomGenreTagStyle: IStyleFrame = {
+  basis: {
+    "display": "block",
+    "font-size": "0.9rem",
+    "height": "1.5rem",
+    "margin-bottom": "4px"
+  }
+};
+
+export const BottomGerenTag = styled.span<IStyle>`
+  ${props => combineStyle(bottomGenreTagStyle, props.styleObj)}
+`;
+
+const bottomTitleTagStyle: IStyleFrame = {
+  basis: {
+    "display": "block",
+    "font-size": "1.15rem",
+    "font-weight": "600",
+    "text-overflow": "ellipsis",
+    "overflow": "hidden",
+    "white-space": "nowrap"
+  }
+};
+
+export const BottomTitleTag = styled.a<IStyle>`
+  ${props => combineStyle(bottomTitleTagStyle, props.styleObj)}
+`;
+
+const overlayTitleTagStyle: IStyleFrame = {
+  basis: {
+    "display": "block",
+    "color": "white",
+    "font-weight": "600",
+    "text-overflow": "ellipsis",
+    "overflow": "hidden",
+    "white-space": "nowrap"
+  }
+};
+
+export const OverlayTitleTag = styled.a<IStyle>`
+  ${props => combineStyle(overlayTitleTagStyle, props.styleObj)}
+`;
+
+const separaterStyle: IStyleFrame = {
+  basis: {
+    "width": "100%",
+    "height": "2px",
+    "background-color": "#ebdddd",
+    "margin-top": "1rem",
+    "position": "relative"
+  }
+};
+export const Separater = styled.div<IStyle>`
+  ${props => combineStyle(separaterStyle, props.styleObj)}
+`;
+
+const segmentStyle: IStyleFrame = {
+  basis: {
+    "width": "7rem",
+    "height": "4px",
+    "background-color": "#e34d4d",
+    "top": "-1px",
+    "position": "absolute"
+  }
+};
+export const Segment = styled.div<IStyle>`
+  ${props => combineStyle(segmentStyle, props.styleObj)}
+`;

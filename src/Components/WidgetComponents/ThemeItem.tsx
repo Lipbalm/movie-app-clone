@@ -4,20 +4,28 @@ import {
   ThumnailWrapper,
   Thumnail,
   ThemeItemLayer,
-  OverlayTitleTag,
-  IStyleFrame
+  OverlayTitleTag
 } from "./WidgetStyle";
+import { IStyleFrame } from "../../Modules/StyleInterfaces";
 
 export const BigItem: FC = () => {
-  const itemWrapperStyle: IStyleFrame = {
+  const themeItemWrapperStyle: IStyleFrame = {
     basis: {
-      margin: "0 0 0 0"
+      "margin": "0 0 0 24px"
     },
     pesudo: {}
   };
+
+  const thumnailWrapperStyle: IStyleFrame = {
+    basis: {
+      "width": "36.75rem",
+      "height": "24rem"
+    }
+  };
+
   return (
-    <ThemeItemWrapper {...itemWrapperStyle}>
-      <ThumnailWrapper width={"36.75rem"} height={"24rem"}>
+    <ThemeItemWrapper {...themeItemWrapperStyle}>
+      <ThumnailWrapper {...thumnailWrapperStyle}>
         <Thumnail />
       </ThumnailWrapper>
       <ThemeItemLayer>
@@ -30,7 +38,3 @@ export const BigItem: FC = () => {
 export const TinyItem: FC = () => {
   return <></>;
 };
-
-Object.entries({ width: "100px", height: "100px" }).reduce((a, c) => {
-  return (a += `${c[0]}: ${c[1]};`);
-}, ``);

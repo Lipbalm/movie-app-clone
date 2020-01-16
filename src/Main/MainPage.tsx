@@ -9,12 +9,12 @@ const MainPage: FC = () => {
     <>
       <CarouselContainer></CarouselContainer>
       <BodyWrapper>
-        <CardWidget
+        {/* <CardWidget
           cards={tempCards}
           head_text="제일 많이 본 영화"
           key="card_widget_1"
           card_path={"/item"}
-        ></CardWidget>
+        ></CardWidget> */}
         <ThemeWidget></ThemeWidget>
       </BodyWrapper>
     </>
