@@ -4,12 +4,12 @@ import { createBrowserHistory } from "history";
 import { RectCard, ThumnailWrapper, Thumnail } from "./WidgetStyle";
 import { baseImageURL } from "../../Modules/apis";
 import { BottomTag, OverlayTag } from "./CardTag";
-import { ICardProps } from "../../Modules/Interfaces";
+import { IImageCompnentProps } from "../../Modules/Interfaces";
 import { IStyleFrame } from "../../Modules/StyleInterfaces";
 
 const history = createBrowserHistory();
 
-export const CardMd: FC<ICardProps> = ({ info, index, path }) => {
+export const CardMd: FC<IImageCompnentProps> = ({ info, index, path }) => {
   const [clicked, setClicked] = useState<boolean>(false);
   const { id, genre_ids, title, poster_path } = info;
   const genres = genre_ids.join("/");

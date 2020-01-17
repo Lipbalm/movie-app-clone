@@ -1,9 +1,12 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { BigItem, TinyItem } from "./ThemeItem";
+import { tempCard } from "../../Test/TempData/Card";
 
 const itemSetup = (sep: string) => {
-  return sep === "B" ? { ...render(<BigItem />) } : { ...render(<TinyItem />) };
+  return sep === "B"
+    ? { ...render(<BigItem info={tempCard} index={0} path={"/item"} />) }
+    : { ...render(<TinyItem info={tempCard} index={0} path={"/item"} />) };
 };
 
 describe("<BigItem/> & <TinyItem/>", () => {

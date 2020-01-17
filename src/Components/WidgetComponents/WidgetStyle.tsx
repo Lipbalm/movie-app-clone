@@ -58,8 +58,7 @@ const widgetContentsInnerStyle: IStyleFrame = {
   basis: {
     "display": "flex",
     "flex-wrap": "wrap",
-    "width": "100%",
-    "justify-content": "space-between"
+    "width": "100%"
   }
 };
 
@@ -69,7 +68,7 @@ export const WidgetContentsInner = styled.div<IStyle>`
 
 const WidgetContentsColumnStyle: IStyleFrame = {
   basis: {
-    "display": "flex",
+    "display": "block",
     "flex-wrap": "wrap",
     "margin": "0 0 0 0"
   }
@@ -127,7 +126,9 @@ export const ThumnailWrapper = styled.div<IStyle>`
 `;
 
 const thumnailStyle: IStyleFrame = {
-  basis: { "text-align": "center" }
+  basis: {
+    "text-align": "center"
+  }
 };
 export const Thumnail = styled.div<IStyle>`
   ${props => combineStyle(thumnailStyle, props.styleObj)}

@@ -5,10 +5,19 @@ import {
   WidgetLink,
   Separater,
   Segment,
+  WidgetContentsInner,
+  WidgetContentsColumn,
   WidgetWrapper
 } from "./WidgetStyle";
-import { BigItem } from "./ThemeItem";
+import { BigItem, TinyItem } from "./ThemeItem";
+import { IStyleFrame } from "../../Modules/StyleInterfaces";
+
 const ThemeWidget = () => {
+  const widgetContentsColumnStyle: IStyleFrame = {
+    basis: {
+      "margin": "0 0 0 24px"
+    }
+  };
   return (
     <WidgetWrapper>
       <WidgetHead>
@@ -19,7 +28,18 @@ const ThemeWidget = () => {
       <Separater>
         <Segment />
       </Separater>
-      <BigItem></BigItem>
+      <WidgetContentsInner>
+        <WidgetContentsColumn>
+          <BigItem info={tempCard} index={0} path={"/item"} />
+        </WidgetContentsColumn>
+        <WidgetContentsColumn styleObj={widgetContentsColumnStyle}>
+          <TinyItem info={tempCard} index={0} path={"/item"} />
+          <TinyItem info={tempCard} index={0} path={"/item"} />
+          <TinyItem info={tempCard} index={0} path={"/item"} />
+          <TinyItem info={tempCard} index={0} path={"/item"} />
+          <TinyItem info={tempCard} index={0} path={"/item"} />
+        </WidgetContentsColumn>
+      </WidgetContentsInner>
     </WidgetWrapper>
   );
 };

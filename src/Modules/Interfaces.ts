@@ -39,7 +39,7 @@ export interface IMatchParams {
   id: string;
 }
 
-export interface ICardProps {
+export interface IImageCompnentProps {
   info: ITopRatedResults;
   index: number;
   path: string;
