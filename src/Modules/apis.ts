@@ -11,7 +11,7 @@ const baseMoviesInstance: AxiosInstance = axios.create({
   baseURL: `https://api.themoviedb.org/3/movie`
 });
 
-const baseImageURL: string = "https://image.tmdb.org/t/p/w500/";
+const imageBaseURL: string = "https://image.tmdb.org/t/p/w500/";
 
 let genreIds: IMapGenreIds[];
 
@@ -35,4 +35,4 @@ const getGenreIds = (language: string) =>
     })
     .catch(e => e);
 
-export { getTopRatedMovie, genreIds, getGenreIds, baseImageURL };
+export { getTopRatedMovie, genreIds, getGenreIds, imageBaseURL };

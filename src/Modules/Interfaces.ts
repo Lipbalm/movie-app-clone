@@ -44,3 +44,14 @@ export interface IImageCompnentProps {
   index: number;
   path: string;
 }
+
+export interface IWidgetProps {
+  head_text: string;
+  info_list: ITopRatedResults[];
+  head_link_path: string;
+  item_path: string;
+}
+
+export interface IItemWidgetProps extends IWidgetProps {
+  big_item_info: ITopRatedResults;
+}

@@ -8,21 +8,20 @@ import {
   Separater,
   Segment
 } from "./WidgetStyle";
-import { ITopRatedResults } from "../../Modules/Interfaces";
-import { CardMd } from "./Card";
+import { Card } from "./Card";
+import { IWidgetProps } from "../../Modules/Interfaces";
 
-interface IProps {
-  head_text: string;
-  cards: ITopRatedResults[];
-  card_path: string;
-}
-
-const CardWidget: FC<IProps> = ({ head_text, cards, card_path }) => {
+const CardWidget: FC<IWidgetProps> = ({
+  head_text,
+  info_list,
+  head_link_path,
+  item_path
+}) => {
   return (
     <WidgetWrapper>
       <WidgetHead>
         {head_text}
-        <WidgetLink to="/theme">더보기</WidgetLink>
+        <WidgetLink to={head_link_path}>더보기</WidgetLink>
       </WidgetHead>
 
       <Separater>
@@ -31,14 +30,9 @@ const CardWidget: FC<IProps> = ({ head_text, cards, card_path }) => {
 
       <WidgetContents>
         <WidgetContentsInner>
-          {cards.map(
+          {info_list.map(
             (v, i) => (
-              <CardMd
-                card_info={v}
-                index={i}
-                key={i}
-                card_path={`${card_path}/${v.id}`}
-              />
+              <Card info={v} index={i} key={i} path={`${item_path}/${v.id}`} />
             ),
             0
           )}

@@ -1,5 +1,5 @@
-import React from "react";
-import { tempCard } from "../../Test/TempData/Card";
+import React, { FC } from "react";
+import { tempCard, tempCards } from "../../Test/TempData/Card";
 import {
   WidgetHead,
   WidgetLink,
@@ -11,18 +11,26 @@ import {
 } from "./WidgetStyle";
 import { BigItem, TinyItem } from "./ThemeItem";
 import { IStyleFrame } from "../../Modules/StyleInterfaces";
+import { IItemWidgetProps } from "../../Modules/Interfaces";
 
-const ThemeWidget = () => {
-  const widgetContentsColumnStyle: IStyleFrame = {
+const ThemeWidget: FC<IItemWidgetProps> = ({
+  head_text,
+  info_list,
+  big_item_info,
+  head_link_path,
+  item_path
+}) => {
+  const leftColumnStyle: IStyleFrame = {
     basis: {
       "margin": "0 0 0 24px"
     }
   };
+
   return (
     <WidgetWrapper>
       <WidgetHead>
-        제일 잘팔리는 영화
-        <WidgetLink to="/item">더보기</WidgetLink>
+        {head_text}
+        <WidgetLink to={head_link_path}>더보기</WidgetLink>
       </WidgetHead>
 
       <Separater>
@@ -30,14 +38,16 @@ const ThemeWidget = () => {
       </Separater>
       <WidgetContentsInner>
         <WidgetContentsColumn>
-          <BigItem info={tempCard} index={0} path={"/item"} />
+          <BigItem
+            info={big_item_info}
+            index={0}
+            path={`${item_path}${big_item_info.id}`}
+          />
         </WidgetContentsColumn>
-        <WidgetContentsColumn styleObj={widgetContentsColumnStyle}>
-          <TinyItem info={tempCard} index={0} path={"/item"} />
-          <TinyItem info={tempCard} index={0} path={"/item"} />
-          <TinyItem info={tempCard} index={0} path={"/item"} />
-          <TinyItem info={tempCard} index={0} path={"/item"} />
-          <TinyItem info={tempCard} index={0} path={"/item"} />
+        <WidgetContentsColumn styleObj={leftColumnStyle}>
+          {info_list.map((v, i) => {
+            return <TinyItem info={v} index={i} path={`${item_path}${v.id}`} />;
+          })}
         </WidgetContentsColumn>
       </WidgetContentsInner>
     </WidgetWrapper>

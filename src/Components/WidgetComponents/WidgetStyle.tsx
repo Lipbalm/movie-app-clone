@@ -58,7 +58,8 @@ const widgetContentsInnerStyle: IStyleFrame = {
   basis: {
     "display": "flex",
     "flex-wrap": "wrap",
-    "width": "100%"
+    "width": "100%",
+    "justify-content": "space-between"
   }
 };
 
@@ -81,7 +82,6 @@ export const WidgetContentsColumn = styled.div<IStyle>`
 const rectCardStyle: IStyleFrame = {
   basis: {
     "width": "13.75rem",
-    "height": "23.75rem",
     "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.1)",
     "transition": "box-shadow 0.3s ease-in"
   },
@@ -127,7 +127,12 @@ export const ThumnailWrapper = styled.div<IStyle>`
 
 const thumnailStyle: IStyleFrame = {
   basis: {
-    "text-align": "center"
+    "background-size": "contain",
+    "position": "absolute",
+    "background-repeat": "no-repeat",
+    "box-sizing": "inherit",
+    "width": "inherit",
+    "height": "inherit"
   }
 };
 export const Thumnail = styled.div<IStyle>`

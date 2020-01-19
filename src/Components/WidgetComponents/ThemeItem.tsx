@@ -6,7 +6,7 @@ import {
   ThemeItemLayer,
   OverlayTitleTag
 } from "./WidgetStyle";
-import { baseImageURL } from "../../Modules/apis";
+import { imageBaseURL } from "../../Modules/apis";
 import { IStyleFrame, IStyleProperty } from "../../Modules/StyleInterfaces";
 import { IImageCompnentProps } from "../../Modules/Interfaces";
 import { Redirect } from "react-router-dom";
@@ -27,7 +27,7 @@ export const BigItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
 
   const thumnailStyle: IStyleFrame = {
     basis: {
-      "background-image": `url('${baseImageURL}${poster_path}')`
+      "background-image": `url('${imageBaseURL}${poster_path}')`
     }
   };
 
@@ -91,7 +91,7 @@ export const TinyItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
 
   const thumnailStyle: IStyleFrame = {
     basis: {
-      "background-image": `url('${baseImageURL}${poster_path}')`
+      "background-image": `url('${imageBaseURL}${poster_path}')`
     }
   };
 
