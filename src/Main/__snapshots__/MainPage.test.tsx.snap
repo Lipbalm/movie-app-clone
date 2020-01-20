@@ -1,0 +1,367 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainPage /> snapshot 1`] = `
+<div>
+  <div
+    class="sc-bxivhb czzmdl"
+  />
+  <div
+    class="sc-ifAKCX cktARQ"
+  >
+    <div
+      class="sc-EHOje hjUbwC"
+    >
+      <h2
+        class="sc-bZQynM kXqyJF"
+      >
+        제일 많이 본 영화
+        <a
+          class="sc-gzVnrw ddfmCq"
+          href="/item"
+        >
+          더보기
+        </a>
+      </h2>
+      <div
+        class="sc-kGXeez jrrZSC"
+      >
+        <div
+          class="sc-kpOJdX cpJozj"
+        />
+      </div>
+      <div
+        class="sc-htoDjs ilhYAR"
+      >
+        <div
+          class="sc-dnqmqq fMKVSZ"
+        >
+          <div
+            class="sc-gZMcBi Uwzts"
+            data-testid="card"
+          >
+            <div
+              class="sc-VigVT knNAAJ"
+            >
+              <div
+                class="sc-jTzLTM dodnuM"
+              />
+            </div>
+            <div
+              class="sc-jzJRlG dpMOwe"
+            >
+              <span
+                class="sc-kAzzGY ggQPml"
+                data-testid="genre"
+              >
+                35/18/10749
+              </span>
+              <a
+                class="sc-chPdSV ijoXjQ"
+                data-testid="title"
+              >
+                Dilwale Dulhania Le Jayenge
+              </a>
+            </div>
+          </div>
+          <div
+            class="sc-gZMcBi Uwzts"
+            data-testid="card"
+          >
+            <div
+              class="sc-VigVT knNAAJ"
+            >
+              <div
+                class="sc-jTzLTM koSzvs"
+              />
+            </div>
+            <div
+              class="sc-jzJRlG dpMOwe"
+            >
+              <span
+                class="sc-kAzzGY ggQPml"
+                data-testid="genre"
+              >
+                80/18
+              </span>
+              <a
+                class="sc-chPdSV ijoXjQ"
+                data-testid="title"
+              >
+                The Shawshank Redemption
+              </a>
+            </div>
+          </div>
+          <div
+            class="sc-gZMcBi Uwzts"
+            data-testid="card"
+          >
+            <div
+              class="sc-VigVT knNAAJ"
+            >
+              <div
+                class="sc-jTzLTM cTdkRs"
+              />
+            </div>
+            <div
+              class="sc-jzJRlG dpMOwe"
+            >
+              <span
+                class="sc-kAzzGY ggQPml"
+                data-testid="genre"
+              >
+                18/80
+              </span>
+              <a
+                class="sc-chPdSV ijoXjQ"
+                data-testid="title"
+              >
+                The Godfather
+              </a>
+            </div>
+          </div>
+          <div
+            class="sc-gZMcBi Uwzts"
+            data-testid="card"
+          >
+            <div
+              class="sc-VigVT knNAAJ"
+            >
+              <div
+                class="sc-jTzLTM fIpddy"
+              />
+            </div>
+            <div
+              class="sc-jzJRlG dpMOwe"
+            >
+              <span
+                class="sc-kAzzGY ggQPml"
+                data-testid="genre"
+              >
+                18/36/10752
+              </span>
+              <a
+                class="sc-chPdSV ijoXjQ"
+                data-testid="title"
+              >
+                Schindler's List
+              </a>
+            </div>
+          </div>
+          <div
+            class="sc-gZMcBi Uwzts"
+            data-testid="card"
+          >
+            <div
+              class="sc-VigVT knNAAJ"
+            >
+              <div
+                class="sc-jTzLTM fZxKFo"
+              />
+            </div>
+            <div
+              class="sc-jzJRlG dpMOwe"
+            >
+              <span
+                class="sc-kAzzGY ggQPml"
+                data-testid="genre"
+              >
+                35/18/53
+              </span>
+              <a
+                class="sc-chPdSV ijoXjQ"
+                data-testid="title"
+              >
+                Parasite
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-EHOje hjUbwC"
+    >
+      <h2
+        class="sc-bZQynM kXqyJF"
+      >
+        제일 많이 본 영화
+        <a
+          class="sc-gzVnrw ddfmCq"
+          href="/itme"
+        >
+          더보기
+        </a>
+      </h2>
+      <div
+        class="sc-kGXeez jrrZSC"
+      >
+        <div
+          class="sc-kpOJdX cpJozj"
+        />
+      </div>
+      <div
+        class="sc-htoDjs ilhYAR"
+      >
+        <div
+          class="sc-iwsKbI cwFckA"
+        >
+          <div
+            class="sc-gqjmRU ddZkBY"
+            data-testid="item"
+          >
+            <div
+              class="sc-VigVT fiDZiM"
+              data-testid="thumnailWrapper"
+            >
+              <div
+                class="sc-jTzLTM gWqGFT"
+                data-testid="thumnail"
+              />
+            </div>
+            <div
+              class="sc-fjdhpX cCSzsK"
+              data-testid="layer"
+            >
+              <a
+                class="sc-kgoBCf hNMDMm"
+                data-testid="link"
+              >
+                Dilwale Dulhania Le Jayenge
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sc-iwsKbI hloxKn"
+        >
+          <div
+            class="sc-gqjmRU ddZkBY"
+            data-testid="item"
+          >
+            <div
+              class="sc-VigVT hlRwKS"
+              data-testid="thumnailWrapper"
+            >
+              <div
+                class="sc-jTzLTM juYtdO"
+                data-testid="thumnail"
+              />
+            </div>
+            <div
+              class="sc-fjdhpX cCSzsK"
+              data-testid="layer"
+            >
+              <a
+                class="sc-kgoBCf hNMDMm"
+                data-testid="link"
+              >
+                Dilwale Dulhania Le Jayenge
+              </a>
+            </div>
+          </div>
+          <div
+            class="sc-gqjmRU bJQSHF"
+            data-testid="item"
+          >
+            <div
+              class="sc-VigVT hlRwKS"
+              data-testid="thumnailWrapper"
+            >
+              <div
+                class="sc-jTzLTM hWcngc"
+                data-testid="thumnail"
+              />
+            </div>
+            <div
+              class="sc-fjdhpX cCSzsK"
+              data-testid="layer"
+            >
+              <a
+                class="sc-kgoBCf hNMDMm"
+                data-testid="link"
+              >
+                The Shawshank Redemption
+              </a>
+            </div>
+          </div>
+          <div
+            class="sc-gqjmRU bJQSHF"
+            data-testid="item"
+          >
+            <div
+              class="sc-VigVT hlRwKS"
+              data-testid="thumnailWrapper"
+            >
+              <div
+                class="sc-jTzLTM bGTElw"
+                data-testid="thumnail"
+              />
+            </div>
+            <div
+              class="sc-fjdhpX cCSzsK"
+              data-testid="layer"
+            >
+              <a
+                class="sc-kgoBCf hNMDMm"
+                data-testid="link"
+              >
+                The Godfather
+              </a>
+            </div>
+          </div>
+          <div
+            class="sc-gqjmRU bJQSHF"
+            data-testid="item"
+          >
+            <div
+              class="sc-VigVT hlRwKS"
+              data-testid="thumnailWrapper"
+            >
+              <div
+                class="sc-jTzLTM djSytx"
+                data-testid="thumnail"
+              />
+            </div>
+            <div
+              class="sc-fjdhpX cCSzsK"
+              data-testid="layer"
+            >
+              <a
+                class="sc-kgoBCf hNMDMm"
+                data-testid="link"
+              >
+                Schindler's List
+              </a>
+            </div>
+          </div>
+          <div
+            class="sc-gqjmRU cjbSoN"
+            data-testid="item"
+          >
+            <div
+              class="sc-VigVT hlRwKS"
+              data-testid="thumnailWrapper"
+            >
+              <div
+                class="sc-jTzLTM hdRkPf"
+                data-testid="thumnail"
+              />
+            </div>
+            <div
+              class="sc-fjdhpX cCSzsK"
+              data-testid="layer"
+            >
+              <a
+                class="sc-kgoBCf hNMDMm"
+                data-testid="link"
+              >
+                Parasite
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

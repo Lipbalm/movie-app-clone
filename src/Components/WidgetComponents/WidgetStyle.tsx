@@ -69,7 +69,7 @@ export const WidgetContentsInner = styled.div<IStyle>`
 
 const WidgetContentsColumnStyle: IStyleFrame = {
   basis: {
-    "display": "block",
+    "display": "flex",
     "flex-wrap": "wrap",
     "margin": "0 0 0 0"
   }
@@ -100,7 +100,6 @@ export const RectCard = styled.div<IStyle>`
 const themeItemWrapperStyle: IStyleFrame = {
   basis: {
     "display": "flex",
-    "margin": "0 0 0 0",
     "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.1)",
     "transition": "box-shadow 0.3s ease-in"
   },
@@ -127,7 +126,7 @@ export const ThumnailWrapper = styled.div<IStyle>`
 
 const thumnailStyle: IStyleFrame = {
   basis: {
-    "background-size": "contain",
+    // "background-size": "",
     "position": "absolute",
     "background-repeat": "no-repeat",
     "box-sizing": "inherit",

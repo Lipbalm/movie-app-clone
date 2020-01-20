@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardTag /> & <OverlayTag /> OverlayTag 1`] = `
+<div>
+  <div
+    class="sc-gqjmRU cfHsSd"
+  >
+    <a
+      class="sc-fjdhpX bRnXaD"
+      data-testid="title"
+    >
+      Dilwale Dulhania Le Jayenge
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<CardTag /> & <OverlayTag /> SnapShot 1`] = `
+<div>
+  <div
+    class="sc-gZMcBi cUITsv"
+  >
+    <span
+      class="sc-VigVT jnzVBN"
+      data-testid="genre"
+    >
+      35/18/10749
+    </span>
+    <a
+      class="sc-jTzLTM djLRRX"
+      data-testid="title"
+    >
+      Dilwale Dulhania Le Jayenge
+    </a>
+  </div>
+</div>
+`;

@@ -5,7 +5,7 @@ import {
   WidgetLink,
   Separater,
   Segment,
-  WidgetContentsInner,
+  WidgetContents,
   WidgetContentsColumn,
   WidgetWrapper
 } from "./WidgetStyle";
@@ -36,7 +36,7 @@ const ThemeWidget: FC<IItemWidgetProps> = ({
       <Separater>
         <Segment />
       </Separater>
-      <WidgetContentsInner>
+      <WidgetContents>
         <WidgetContentsColumn>
           <BigItem
             info={big_item_info}
@@ -46,10 +46,17 @@ const ThemeWidget: FC<IItemWidgetProps> = ({
         </WidgetContentsColumn>
         <WidgetContentsColumn styleObj={leftColumnStyle}>
           {info_list.map((v, i) => {
-            return <TinyItem info={v} index={i} path={`${item_path}${v.id}`} />;
+            return (
+              <TinyItem
+                info={v}
+                index={i}
+                path={`${item_path}${v.id}`}
+                key={i}
+              />
+            );
           })}
         </WidgetContentsColumn>
-      </WidgetContentsInner>
+      </WidgetContents>
     </WidgetWrapper>
   );
 };

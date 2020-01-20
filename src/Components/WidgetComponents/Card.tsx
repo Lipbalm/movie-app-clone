@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { RectCard, ThumnailWrapper, Thumnail } from "./WidgetStyle";
 import { imageBaseURL } from "../../Modules/apis";
-import { BottomTag, OverlayTag } from "./CardTag";
+import { BottomTag } from "./CardTag";
 import { IImageCompnentProps } from "../../Modules/Interfaces";
 import { IStyleFrame } from "../../Modules/StyleInterfaces";
 
@@ -28,7 +28,8 @@ export const Card: FC<IImageCompnentProps> = ({ info, index, path }) => {
 
   const thumnailStyle: IStyleFrame = {
     basis: {
-      "background-image": `url('${imageBaseURL}${poster_path}')`
+      "background-image": `url('${imageBaseURL}${poster_path}')`,
+      "background-size": "13.75rem 17.625rem"
     }
   };
 

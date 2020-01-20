@@ -1,3 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BigItem/> & <TinyItem/> snapshot 1`] = `<div />`;
+exports[`<BigItem/> & <TinyItem/> snapshot 1`] = `
+<div>
+  <div
+    class="sc-gzVnrw jhSYZs"
+    data-testid="item"
+  >
+    <div
+      class="sc-htoDjs iKOdTa"
+      data-testid="thumnailWrapper"
+    >
+      <div
+        class="sc-dnqmqq hjIlmf"
+        data-testid="thumnail"
+      />
+    </div>
+    <div
+      class="sc-iwsKbI bldUmY"
+      data-testid="layer"
+    >
+      <a
+        class="sc-fjdhpX bRnXaD"
+        data-testid="link"
+      >
+        Dilwale Dulhania Le Jayenge
+      </a>
+    </div>
+  </div>
+</div>
+`;

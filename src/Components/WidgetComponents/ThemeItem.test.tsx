@@ -6,7 +6,7 @@ import { tempCard } from "../../Test/TempData/Card";
 const itemSetup = (sep: string) => {
   return sep === "B"
     ? { ...render(<BigItem info={tempCard} index={0} path={"/item"} />) }
-    : { ...render(<TinyItem info={tempCard} index={0} path={"/item"} />) };
+    : { ...render(<TinyItem info={tempCard} index={3} path={"/item"} />) };
 };
 
 describe("<BigItem/> & <TinyItem/>", () => {
@@ -29,5 +29,12 @@ describe("<BigItem/> & <TinyItem/>", () => {
     expect(thumnail).toBeVisible();
     expect(layer).toBeVisible();
     expect(link).toBeVisible();
+  });
+
+  it("margin-test", () => {
+    const { getByTestId } = itemSetup("T");
+    const tinyItem = getByTestId("item");
+
+    expect(tinyItem).toHaveStyle("margin-left: 24px;");
   });
 });

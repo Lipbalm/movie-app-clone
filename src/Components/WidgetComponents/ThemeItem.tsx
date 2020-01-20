@@ -27,7 +27,8 @@ export const BigItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
 
   const thumnailStyle: IStyleFrame = {
     basis: {
-      "background-image": `url('${imageBaseURL}${poster_path}')`
+      "background-image": `url('${imageBaseURL}${poster_path}')`,
+      "background-size": "36.75rem 24rem"
     }
   };
 
@@ -65,8 +66,9 @@ export const TinyItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
       result = { "margin-left": "24px" };
     } else {
       if (index > 3) {
-        result = { "margin-left": "24px", "margin-top": "24px" };
-      } else {
+        // result = { "margin-left": "24px", "margin-top": "24px" };
+      }
+      if (index === 3) {
         result = { "margin-top": "24px" };
       }
     }
@@ -77,10 +79,9 @@ export const TinyItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
     basis: {}
   };
 
-  themeItemWrapperStyle.basis = Object.assign(
-    themeItemWrapperStyle.basis,
-    setMargin(index)
-  );
+  themeItemWrapperStyle.basis = setMargin(index);
+
+  console.log(themeItemWrapperStyle);
 
   const thumnailWrapperStyle: IStyleFrame = {
     basis: {
@@ -91,7 +92,8 @@ export const TinyItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
 
   const thumnailStyle: IStyleFrame = {
     basis: {
-      "background-image": `url('${imageBaseURL}${poster_path}')`
+      "background-image": `url('${imageBaseURL}${poster_path}')`,
+      "background-size": "11.25rem 11.25rem"
     }
   };
 
@@ -108,6 +110,7 @@ export const TinyItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
       onClick={handleClick}
       styleObj={themeItemWrapperStyle}
     >
+      ㅌ
       <ThumnailWrapper
         data-testid="thumnailWrapper"
         styleObj={thumnailWrapperStyle}
