@@ -6,11 +6,7 @@ import ThemeWidget from "./ThemeWidget";
 
 const history = createMemoryHistory();
 const setup = () => {
-  return render(
-    <Router history={history}>
-      <ThemeWidget />
-    </Router>
-  );
+  return render(<Router history={history}></Router>);
 };
 
 describe("<ThemeWidget", () => {

@@ -23,6 +23,9 @@ const MainPage: FC = () => {
           head_text="제일 많이 본 영화"
           head_link_path={"/itme"}
           item_path={"/itme"}
+          desc_tesx={
+            "안 본 사람은 있을 지언정 못 들어본 사람은 없는 영화! 들어만 봤다면 이번 기회에 콜?"
+          }
         ></ThemeWidget>
       </BodyWrapper>
     </>

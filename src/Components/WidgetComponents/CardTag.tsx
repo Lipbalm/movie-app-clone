@@ -1,11 +1,5 @@
 import React, { FC } from "react";
-import {
-  BottomTagWrapper,
-  BottomGerenTag,
-  BottomTitleTag,
-  OverlayTagWrapper,
-  OverlayTitleTag
-} from "./WidgetStyle";
+import { BottomTagWrapper, BottomGerenTag, ItemTitle } from "./WidgetStyle";
 import { IStyleFrame } from "../../Modules/StyleInterfaces";
 
 interface IProps {
@@ -14,35 +8,23 @@ interface IProps {
   type?: string;
 }
 
+const itemTitleStyle: IStyleFrame = {
+  basis: {
+    "font-size": "1.15rem",
+    "font-weight": "600",
+    "color": "black"
+  }
+};
+
 export const BottomTag: FC<IProps> = ({ genres, title }) => {
   return (
     <BottomTagWrapper>
       <BottomGerenTag data-testid="genre">
         {genres === undefined || genres}
       </BottomGerenTag>
-      <BottomTitleTag data-testid="title">{title}</BottomTitleTag>
-    </BottomTagWrapper>
-  );
-};
-
-export const OverlayTag: FC<IProps> = ({ title, type }) => {
-  const overlayWrapperStyle: IStyleFrame = {
-    basis: {
-      "padding": "0.8rem 0.8rem 1.2rem"
-    }
-  };
-
-  const overlayTitleTagStyle: IStyleFrame = {
-    basis: {
-      "fontSize": "1.5rem"
-    }
-  };
-
-  return (
-    <OverlayTagWrapper {...overlayWrapperStyle}>
-      <OverlayTitleTag data-testid="title" {...overlayTitleTagStyle}>
+      <ItemTitle data-testid="title" styleObj={itemTitleStyle}>
         {title}
-      </OverlayTitleTag>
-    </OverlayTagWrapper>
+      </ItemTitle>
+    </BottomTagWrapper>
   );
 };

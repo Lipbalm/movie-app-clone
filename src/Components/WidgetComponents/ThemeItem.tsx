@@ -1,16 +1,17 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useRef } from "react";
 import {
   ThemeItemWrapper,
   ThumnailWrapper,
   Thumnail,
   ThemeItemLayer,
-  OverlayTitleTag
+  ItemTitle
 } from "./WidgetStyle";
 import { imageBaseURL } from "../../Modules/apis";
 import { IStyleFrame, IStyleProperty } from "../../Modules/StyleInterfaces";
 import { IImageCompnentProps } from "../../Modules/Interfaces";
 import { Redirect } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { cloneObject } from "../../Modules/utils";
 
 export const BigItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
   const { id, title, poster_path } = info;
@@ -32,6 +33,15 @@ export const BigItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
     }
   };
 
+  const itemTitleStyle: IStyleFrame = {
+    basis: {
+      "color": "#fff",
+      "padding": "0.5rem",
+      "font-size": "1.5rem",
+      "font-weight": "800"
+    }
+  };
+
   const handleClick = () => {
     setClicked(true);
     history.push(itemUrl);
@@ -46,10 +56,10 @@ export const BigItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
         styleObj={thumnailWrapperStyle}
       >
         <Thumnail data-testid="thumnail" styleObj={thumnailStyle} />
+        <ThemeItemLayer data-testid="layer">
+          <ItemTitle styleObj={itemTitleStyle}>{title}</ItemTitle>
+        </ThemeItemLayer>
       </ThumnailWrapper>
-      <ThemeItemLayer data-testid="layer">
-        <OverlayTitleTag data-testid="link">{title}</OverlayTitleTag>
-      </ThemeItemLayer>
     </ThemeItemWrapper>
   );
 };
@@ -60,28 +70,24 @@ export const TinyItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
   const history = createBrowserHistory();
   const [clicked, setClicked] = useState<boolean>(false);
 
+  let themeItemWrapperStyle: IStyleFrame = { basis: {} };
+
   const setMargin = (index: number) => {
     let result: IStyleProperty = {};
     if (index > 0 && index < 3) {
       result = { "margin-left": "24px" };
     } else {
       if (index > 3) {
-        // result = { "margin-left": "24px", "margin-top": "24px" };
+        result = { "margin-left": "24px", "margin-top": "24px" };
       }
       if (index === 3) {
         result = { "margin-top": "24px" };
       }
     }
-    return result;
+    return { ...result };
   };
 
-  let themeItemWrapperStyle: IStyleFrame = {
-    basis: {}
-  };
-
-  themeItemWrapperStyle.basis = setMargin(index);
-
-  console.log(themeItemWrapperStyle);
+  themeItemWrapperStyle.basis = cloneObject(setMargin(index));
 
   const thumnailWrapperStyle: IStyleFrame = {
     basis: {
@@ -94,6 +100,15 @@ export const TinyItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
     basis: {
       "background-image": `url('${imageBaseURL}${poster_path}')`,
       "background-size": "11.25rem 11.25rem"
+    }
+  };
+
+  const itemTitleStyle: IStyleFrame = {
+    basis: {
+      "color": "#fff",
+      "padding": "0.5rem",
+      "font-size": "0.875",
+      "font-weight": "300"
     }
   };
 
@@ -110,15 +125,14 @@ export const TinyItem: FC<IImageCompnentProps> = ({ info, index, path }) => {
       onClick={handleClick}
       styleObj={themeItemWrapperStyle}
     >
-      ㅌ
       <ThumnailWrapper
         data-testid="thumnailWrapper"
         styleObj={thumnailWrapperStyle}
       >
         <Thumnail data-testid="thumnail" styleObj={thumnailStyle} />
       </ThumnailWrapper>
-      <ThemeItemLayer data-testid="layer">
-        <OverlayTitleTag data-testid="link">{title}</OverlayTitleTag>
+      <ThemeItemLayer data-testid="layer" >
+        <ItemTitle styleObj={itemTitleStyle}>{title}</ItemTitle>
       </ThemeItemLayer>
     </ThemeItemWrapper>
   );

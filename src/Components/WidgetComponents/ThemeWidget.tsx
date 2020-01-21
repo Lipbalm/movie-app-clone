@@ -1,5 +1,4 @@
-import React, { FC } from "react";
-import { tempCard, tempCards } from "../../Test/TempData/Card";
+import React, { FC, useRef } from "react";
 import {
   WidgetHead,
   WidgetLink,
@@ -7,18 +6,21 @@ import {
   Segment,
   WidgetContents,
   WidgetContentsColumn,
-  WidgetWrapper
+  WidgetWrapper,
+  Description,
+  Text
 } from "./WidgetStyle";
 import { BigItem, TinyItem } from "./ThemeItem";
 import { IStyleFrame } from "../../Modules/StyleInterfaces";
-import { IItemWidgetProps } from "../../Modules/Interfaces";
+import { IThemeWidgetProps } from "../../Modules/Interfaces";
 
-const ThemeWidget: FC<IItemWidgetProps> = ({
+const ThemeWidget: FC<IThemeWidgetProps> = ({
   head_text,
   info_list,
   big_item_info,
   head_link_path,
-  item_path
+  item_path,
+  desc_tesx
 }) => {
   const leftColumnStyle: IStyleFrame = {
     basis: {
@@ -28,19 +30,22 @@ const ThemeWidget: FC<IItemWidgetProps> = ({
 
   return (
     <WidgetWrapper>
+      <Separater>
+        <Segment />
+      </Separater>
+
       <WidgetHead>
         {head_text}
         <WidgetLink to={head_link_path}>더보기</WidgetLink>
       </WidgetHead>
-
-      <Separater>
-        <Segment />
-      </Separater>
+      <Description>
+        <Text>{desc_tesx}</Text>
+      </Description>
       <WidgetContents>
         <WidgetContentsColumn>
           <BigItem
             info={big_item_info}
-            index={0}
+            index={big_item_info.id}
             path={`${item_path}${big_item_info.id}`}
           />
         </WidgetContentsColumn>
@@ -51,7 +56,7 @@ const ThemeWidget: FC<IItemWidgetProps> = ({
                 info={v}
                 index={i}
                 path={`${item_path}${v.id}`}
-                key={i}
+                key={v.id}
               />
             );
           })}

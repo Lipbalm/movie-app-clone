@@ -8,7 +8,11 @@ export const isMatch = (input: string, pattern: string) => {
 export const changeGenreIdToName = (inputIds: number[]) =>
   inputIds.map(v => genreIds[v]).join("/");
 
-export const combineStyle = (target: IStyleFrame, source?: IStyleFrame) => {
+export const combineStyle = (
+  target: IStyleFrame,
+  source?: IStyleFrame,
+  testId?: string
+) => {
   const convertCSS = (obj: Object) => {
     return Object.entries(obj).reduce((a, c) => {
       return (a += `  ${c[0]}: ${c[1]};\n`);
@@ -40,18 +44,23 @@ export const combineStyle = (target: IStyleFrame, source?: IStyleFrame) => {
 
     return `${conversion}${addedPesudo}`;
   };
+  const targetBasis: IStyleProperty = cloneObject(target.basis);
 
-  const replacement: IStyleFrame =
-    source === undefined ? { basis: {}, pesudo: {} } : source;
+  const replacBasis: IStyleFrame =
+    source === undefined ? { basis: {}, pesudo: {} } : cloneObject(source);
 
   const orginPesudo: ICSSPesudo =
-    target.pesudo === undefined ? {} : target.pesudo;
+    target.pesudo === undefined ? {} : cloneObject(target.pesudo);
 
   const replacePesudo: ICSSPesudo =
-    replacement.pesudo === undefined ? {} : replacement.pesudo;
+    replacBasis.pesudo === undefined ? {} : cloneObject(replacBasis.pesudo);
 
-  const basis = convertCSS(Object.assign(target.basis, replacement.basis));
+  const basis = convertCSS(Object.assign(targetBasis, replacBasis.basis));
   const pesudo = combinePesudo(orginPesudo, replacePesudo);
 
   return `${basis}${pesudo}`;
+};
+
+export const cloneObject = (obj: Object) => {
+  return JSON.parse(JSON.stringify(obj));
 };

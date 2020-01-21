@@ -99,7 +99,7 @@ export const RectCard = styled.div<IStyle>`
 
 const themeItemWrapperStyle: IStyleFrame = {
   basis: {
-    "display": "flex",
+    "position": "relative",
     "box-shadow": "0 1px 11px 0 rgba(0, 0, 0, 0.1)",
     "transition": "box-shadow 0.3s ease-in"
   },
@@ -110,8 +110,9 @@ const themeItemWrapperStyle: IStyleFrame = {
     }
   }
 };
+
 export const ThemeItemWrapper = styled.div<IStyle>`
-  ${props => combineStyle(themeItemWrapperStyle, props.styleObj)}
+  ${props => combineStyle(themeItemWrapperStyle, props.styleObj, "ItemWrapper")}
 `;
 
 const thumnailWrapper: IStyleFrame = {
@@ -126,7 +127,6 @@ export const ThumnailWrapper = styled.div<IStyle>`
 
 const thumnailStyle: IStyleFrame = {
   basis: {
-    // "background-size": "",
     "position": "absolute",
     "background-repeat": "no-repeat",
     "box-sizing": "inherit",
@@ -140,7 +140,15 @@ export const Thumnail = styled.div<IStyle>`
 
 const themeItemLayerStyle: IStyleFrame = {
   basis: {
-    "position": "absolute"
+    "position": "absolute",
+    "top": "0",
+    "left": "0",
+    "right": "0",
+    "bottom": "0",
+    "display": "flex",
+    "justify-content": "flex-start",
+    "align-items": "flex-end",
+    "box-sizing": "inherit"
   }
 };
 export const ThemeItemLayer = styled.div<IStyle>`
@@ -159,19 +167,6 @@ export const BottomTagWrapper = styled.div<IStyle>`
   ${props => combineStyle(bottomTagWrapperStyle, props.styleObj)}
 `;
 
-const overlayTagWrapperStyle: IStyleFrame = {
-  basis: {
-    "position": "absolute",
-    "width": "80%",
-    "bottom": "0",
-    "padding": "0",
-    "background-color": "transparent"
-  }
-};
-export const OverlayTagWrapper = styled.div<IStyle>`
-  ${props => combineStyle(overlayTagWrapperStyle, props.styleObj)}
-`;
-
 const bottomGenreTagStyle: IStyleFrame = {
   basis: {
     "display": "block",
@@ -185,34 +180,17 @@ export const BottomGerenTag = styled.span<IStyle>`
   ${props => combineStyle(bottomGenreTagStyle, props.styleObj)}
 `;
 
-const bottomTitleTagStyle: IStyleFrame = {
+const itemTitleStyle: IStyleFrame = {
   basis: {
     "display": "block",
-    "font-size": "1.15rem",
-    "font-weight": "600",
     "text-overflow": "ellipsis",
     "overflow": "hidden",
     "white-space": "nowrap"
   }
 };
 
-export const BottomTitleTag = styled.a<IStyle>`
-  ${props => combineStyle(bottomTitleTagStyle, props.styleObj)}
-`;
-
-const overlayTitleTagStyle: IStyleFrame = {
-  basis: {
-    "display": "block",
-    "color": "white",
-    "font-weight": "600",
-    "text-overflow": "ellipsis",
-    "overflow": "hidden",
-    "white-space": "nowrap"
-  }
-};
-
-export const OverlayTitleTag = styled.a<IStyle>`
-  ${props => combineStyle(overlayTitleTagStyle, props.styleObj)}
+export const ItemTitle = styled.a<IStyle>`
+  ${props => combineStyle(itemTitleStyle, props.styleObj)}
 `;
 
 const separaterStyle: IStyleFrame = {
@@ -239,4 +217,28 @@ const segmentStyle: IStyleFrame = {
 };
 export const Segment = styled.div<IStyle>`
   ${props => combineStyle(segmentStyle, props.styleObj)}
+`;
+
+const descriptionStyle: IStyleFrame = {
+  basis: {
+    "margin-top": "14px",
+    "display": "flex",
+    "width": "85%"
+  }
+};
+
+export const Description = styled.div<IStyle>`
+  ${props => combineStyle(descriptionStyle, props.styleObj)}
+`;
+
+const textStyle: IStyleFrame = {
+  basis: {
+    "color": "#495057",
+    "font-size": "1rem",
+    "opacity": ".6"
+  }
+};
+
+export const Text = styled.div<IStyle>`
+  ${props => combineStyle(textStyle, props.styleObj)}
 `;

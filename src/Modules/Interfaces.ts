@@ -52,6 +52,7 @@ export interface IWidgetProps {
   item_path: string;
 }
 
-export interface IItemWidgetProps extends IWidgetProps {
+export interface IThemeWidgetProps extends IWidgetProps {
   big_item_info: ITopRatedResults;
+  desc_tesx: string;
 }
