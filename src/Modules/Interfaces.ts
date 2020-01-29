@@ -56,3 +56,12 @@ export interface IThemeWidgetProps extends IWidgetProps {
   big_item_info: ITopRatedResults;
   desc_tesx: string;
 }
+
+export interface IVideoProps {
+  episode_number: number;
+  title: string;
+  air_date: string;
+  overview: string;
+  image_path: string;
+  episode_id: number;
+}
