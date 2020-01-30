@@ -27,10 +27,10 @@ const VideoItem: FC<IVideoProps> = ({
       </ImageWrapper>
       <ItemInfo>
         <InfoTop>
-          <ItemTitle></ItemTitle>
-          <ItemDate></ItemDate>
+          <ItemTitle>{`${episode_number}. ${title}`}</ItemTitle>
+          <ItemDate>{air_date}</ItemDate>
         </InfoTop>
-        <InfoMid></InfoMid>
+        <InfoMid>{overview}</InfoMid>
         <InfoBot></InfoBot>
       </ItemInfo>
     </ItemWrapper>

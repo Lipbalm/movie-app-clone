@@ -26,7 +26,7 @@ export const StillImage = styled.img<IStyle>`
 `;
 
 const itemInfoStyle: IStyleFrame = {
-  basis: { "display": "flex" }
+  basis: {}
 };
 
 export const ItemInfo = styled.div<IStyle>`
@@ -34,7 +34,7 @@ export const ItemInfo = styled.div<IStyle>`
 `;
 
 const infoTopStyle: IStyleFrame = {
-  basis: {}
+  basis: { "display": "flex" }
 };
 
 export const InfoTop = styled.div<IStyle>`
@@ -42,7 +42,7 @@ export const InfoTop = styled.div<IStyle>`
 `;
 
 const infoMidStyle: IStyleFrame = {
-  basis: {}
+  basis: { "padding-top": "0.3rem" }
 };
 
 export const InfoMid = styled.div<IStyle>`
@@ -58,7 +58,7 @@ export const InfoBot = styled.div<IStyle>`
 `;
 
 const itemTitleStyle: IStyleFrame = {
-  basis: {}
+  basis: { "font-weight": "1000" }
 };
 
 export const ItemTitle = styled(Link)<{ styleObj?: IStyleFrame }>`
@@ -69,6 +69,6 @@ const itemDateStyle: IStyleFrame = {
   basis: {}
 };
 
-export const ItemDate = styled.p<IStyle>`
+export const ItemDate = styled.span<IStyle>`
   ${props => combineStyle(itemDateStyle, props.styleObj)}
 `;
