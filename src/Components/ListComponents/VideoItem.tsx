@@ -8,9 +8,10 @@ import {
   InfoTop,
   InfoMid,
   InfoBot,
-  ItemDate
+  ItemDate,
+  ItemTitle
 } from "./ListStyle";
-import { ItemTitle } from "../WidgetComponents/WidgetStyle";
+import { imageBaseURL } from "../../Modules/apis";
 
 const VideoItem: FC<IVideoProps> = ({
   episode_id,
@@ -23,11 +24,11 @@ const VideoItem: FC<IVideoProps> = ({
   return (
     <ItemWrapper>
       <ImageWrapper>
-        <StillImage></StillImage>
+        <StillImage src={`${imageBaseURL}${image_path}`}></StillImage>
       </ImageWrapper>
       <ItemInfo>
         <InfoTop>
-          <ItemTitle>{`${episode_number}. ${title}`}</ItemTitle>
+          <ItemTitle to="">{`${episode_number}. ${title}`}</ItemTitle>
           <ItemDate>{air_date}</ItemDate>
         </InfoTop>
         <InfoMid>{overview}</InfoMid>
