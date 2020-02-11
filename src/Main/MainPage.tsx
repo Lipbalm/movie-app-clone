@@ -3,8 +3,9 @@ import { CarouselContainer, BodyWrapper } from "./MainStyle";
 import CardWidget from "../Components/WidgetComponents/CardWidget";
 import { tempCard, tempCards } from "../Test/TempData/Card";
 import ThemeWidget from "../Components/WidgetComponents/ThemeWidget";
+import VideoList from "../Components/ListComponents/VideoList";
 import VideoItem from "../Components/ListComponents/VideoItem";
-import { VideoItemData } from "../Test/TempData/BreakingBad";
+import { VideoItemData, VideoListData } from "../Test/TempData/BreakingBad";
 
 const MainPage: FC = () => {
   return (
@@ -29,6 +30,7 @@ const MainPage: FC = () => {
             "안 본 사람은 있을 지언정 못 들어본 사람은 없는 영화! 들어만 봤다면 이번 기회에 콜?"
           }
         ></ThemeWidget> */}
+        <VideoList {...VideoListData()} />
         <VideoItem {...VideoItemData} />
       </BodyWrapper>
     </>

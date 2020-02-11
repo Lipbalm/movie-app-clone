@@ -65,3 +65,7 @@ export interface IVideoProps {
   image_path: string;
   episode_id: number;
 }
+
+export interface IListProps<T> {
+  items: Array<T>;
+}

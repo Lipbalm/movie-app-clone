@@ -1,4 +1,4 @@
-import { IVideoProps } from "../../Modules/Interfaces";
+import { IVideoProps, IListProps } from "../../Modules/Interfaces";
 
 export const seasonOne = {
   "_id": "52542272760ee313280005f8",
@@ -800,4 +800,25 @@ export const VideoItemData: IVideoProps = {
   air_date: air_date,
   image_path: still_path,
   overview
+};
+
+export const VideoListData = () => {
+  const setData = () => {
+    return seasonOne.episodes.map(
+      ({ id, air_date, name, episode_number, still_path, overview }) => {
+        return {
+          episode_id: id,
+          air_date: air_date,
+          title: name,
+          episode_number: episode_number,
+          image_path: still_path,
+          overview: overview
+        };
+      },
+      []
+    );
+  };
+  const rst: IListProps<IVideoProps> = { items: setData() };
+
+  return rst;
 };
